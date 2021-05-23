@@ -1,9 +1,15 @@
+<<<<<<< HEAD
 import logo from './logo.svg';
 import './App.css';
+=======
+import './App.css';
+import Header from "./components/Header";
+>>>>>>> Add header component
 
 function App() {
   return (
     <div className="App">
+<<<<<<< HEAD
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -18,6 +24,9 @@ function App() {
           Learn React
         </a>
       </header>
+=======
+      <Header/>
+>>>>>>> Add header component
     </div>
   );
 }
