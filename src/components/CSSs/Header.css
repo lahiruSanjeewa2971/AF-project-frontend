@@ -1,0 +1,25 @@
+.main{
+    font-family: monospace;
+    font-size: larger;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+}
+#logo{
+    text-decoration: none;
+    text-transform: uppercase;
+    color: rgb(233, 15, 15);
+    font-size: 50px;
+    font-family: Herculanum;
+}
+nav ul li a{
+    text-decoration: none;
+    color: rgb(13, 233, 185);
+    padding: 0 15px;
+    font-size: 20px;
+}
+nav ul li a:hover{
+    color: red;
+}

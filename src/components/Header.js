@@ -1,24 +1,13 @@
 import React from "react";
-import Background from "../images/Background.jpeg";
 import "bootstrap/dist/css/bootstrap.css";
-
-/**
- *
- * @returns backgroundImage: "url(" + { Background } + ")"
- */
-var sectionStyle = {
-  width: "100%",
-  height: "400px",
-  backgroundImage: `url(${Background})`,
-};
+import './CSSs/Header.css';
 
 function Header() {
   return (
-    <div>
-      <section style={sectionStyle}>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/">
-                Navbar
+    <div className="main">
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" id="logo" href="/">
+                ICAF
             </a>
             <button
                 class="navbar-toggler"
@@ -70,7 +59,7 @@ function Header() {
             </ul>
           </div>
         </nav>
-      </section>
+      
     </div>
   );
 }
