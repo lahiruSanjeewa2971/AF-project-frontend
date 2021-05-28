@@ -1,11 +1,25 @@
 import React from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import './CSSs/Header.css';
+import { DropdownButton } from "react-bootstrap";
+import {Navbar, Nav, NavDropdown, Form, FormControl, Button} from 'react-bootstrap';
+
+
 
 function Header() {
+    var workshop = [
+        {
+          value:1,
+          label: "Workshops"
+        },
+        {
+          value:2,
+          label: "Register"
+        }
+    ];
   return (
     <div className="main">
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" id="logo" href="/">
                 ICAF
             </a>
@@ -32,9 +46,10 @@ function Header() {
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/">
-                            Workshops
-                        </a>
+                    <NavDropdown title="Workshop" id="basic-nav-dropdown">
+                        <NavDropdown.Item href="#action/3.1">Register</NavDropdown.Item>
+                        <NavDropdown.Item href="#action/3.2">Workshops</NavDropdown.Item>
+                    </NavDropdown>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/">
@@ -56,9 +71,14 @@ function Header() {
                             Contact
                         </a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">
+                            Login|Register
+                        </a>
+                    </li>
             </ul>
           </div>
-        </nav>
+        </Navbar>
       
     </div>
   );
