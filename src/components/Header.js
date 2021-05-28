@@ -6,16 +6,6 @@ import {Navbar,  NavDropdown} from 'react-bootstrap';
 
 
 function Header() {
-    var workshop = [
-        {
-          value:1,
-          label: "Workshops"
-        },
-        {
-          value:2,
-          label: "Register"
-        }
-    ];
   return (
     <div className="main">
         <Navbar className="navbar navbar-expand-lg navbar-light bg-light">

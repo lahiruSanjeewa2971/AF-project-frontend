@@ -6,6 +6,7 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Navbar from "./components/NavBar";
 import RegisterWorkshop from "./components/RegisterWorkshop";
+import Contact from "./components/pages/Contact";
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -18,6 +19,7 @@ function App() {
 
         <Route path="/registerworkshop" exact component={RegisterWorkshop} />
         <Route path="/" exact component={Home}/>
+        <Route path="/contact" exact component={Contact}/>
 
       </Router>
       
