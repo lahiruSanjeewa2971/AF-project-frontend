@@ -2,11 +2,12 @@ import React from 'react';
 import "./CSSs/Home.css";
 import Background from "../images/Background.jpeg";
 import { Card, Grid } from '@material-ui/core';
+import CountdownTimer from "./pages/CountDownTimer";
 
 
 var sectionStyle = {
     width: "100%",
-    height: "440px",
+    height: "500px",
     backgroundImage: `url(${Background})`,
 };
 var setColor = {
@@ -18,10 +19,11 @@ var setColor = {
 }
 
 function Home(){
+
     return(
         <div>
             <section style={sectionStyle}>
-                <Grid xs={6} container style={{paddingTop:'110px', paddingLeft:'20px'}}>
+                <Grid xs={6} container style={{paddingTop:'150px', paddingLeft:'20px'}}>
                     <Card style={setColor}>
                         Sri Lanka Institue of Information Technology (SLIIT) is organizing an academic conference where researchers present results, workshops, and 
                         other activities. It is named “International Conference on Application Frameworks” – ICAF. 
@@ -31,6 +33,8 @@ function Home(){
                     </Card>
                 </Grid>
             </section>
+            <CountdownTimer/>
+            
             
         </div>
     )

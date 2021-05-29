@@ -1,4 +1,47 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    font-size: 100%;
+}
 section{
     font-size: 23px;
     font-family: Gabriola;
+}
+.timer-container{
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+    width: 100%;
+    height: 40vh;
+}
+.timer{
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 7em;
+    width: 100%;
+    height: 100%;
+}
+.timer div:first-child{
+    border: 1px solid rgb(185, 27, 27);
+    border-radius: 3px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    margin-top: 3em;
+    padding: 3em;
+    text-align: center;
+}
+
+@media screen and (max-width: 480px) {
+    .timer div:first-child{
+        margin-left: 2em;
+        margin-right: 2em;
+        padding: 3em 1em;
+    }
 }
