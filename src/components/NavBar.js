@@ -25,6 +25,7 @@ export default function NavBar(){
                 <NavDropdown title="Login|Register" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/registerresearcher">Researcher</NavDropdown.Item>
                     <NavDropdown.Item href="#">Workshop Conductor</NavDropdown.Item>
+                    <NavDropdown.Item href="/dashboardEditor">Editor</NavDropdown.Item>
                 </NavDropdown>
             </Nav>
             
