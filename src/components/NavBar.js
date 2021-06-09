@@ -18,11 +18,10 @@ export default function NavBar(){
                     <NavDropdown.Item href="/registerworkshop">Register</NavDropdown.Item>
                     <NavDropdown.Item href="#">Workshops</NavDropdown.Item>
                 </NavDropdown>
-                <Nav.Link href="#link">Registrations</Nav.Link>
                 <Nav.Link href="#link">Committee</Nav.Link>
                 <Nav.Link href="#link">Past Proceedings</Nav.Link>
                 <Nav.Link href="/contact">Contact</Nav.Link>
-                <NavDropdown title="Login|Register" id="basic-nav-dropdown">
+                <NavDropdown title="Login" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/registerresearcher">Researcher</NavDropdown.Item>
                     <NavDropdown.Item href="#">Workshop Conductor</NavDropdown.Item>
                     <NavDropdown.Item href="/dashboardEditor">Editor</NavDropdown.Item>
