@@ -27,13 +27,13 @@ export default function Contact(){
             });
     }
 
-    /*axios.post("http://localhost:8070/message/addnewmessage", newMessage)
-      .then(() => {
-        alert("Service added");
-      })
-      .catch((err) => {
-        alert(err);
-      });*/
+    // axios.post("http://localhost:8070/message/addnewmessage", newMessage)
+    //   .then(() => {
+    //     alert("Service added");
+    //   })
+    //   .catch((err) => {
+    //     alert(err);
+    //   });
       
 
     return(

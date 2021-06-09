@@ -23,8 +23,8 @@ export default function NavBar(){
                 <Nav.Link href="#link">Past Proceedings</Nav.Link>
                 <Nav.Link href="/contact">Contact</Nav.Link>
                 <NavDropdown title="Login|Register" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/registerresearcher">Researcher</NavDropdown.Item>
-                    <NavDropdown.Item href="#">Workshop Conductor</NavDropdown.Item>
+                    <NavDropdown.Item href="/login">Login</NavDropdown.Item>
+                    <NavDropdown.Item href="/register">Register</NavDropdown.Item>
                 </NavDropdown>
             </Nav>
             
