@@ -2,17 +2,25 @@ import './App.css';
 import React from 'react';
 import './App.css';
 import Header from "./components/Header";
-import Footer from "./components/Footer";
+//import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Navbar from "./components/NavBar";
 import RegisterWorkshop from "./components/RegisterWorkshop";
 import Contact from "./components/pages/Contact";
+<<<<<<< HEAD
 import Login from "./components/pages/Login";
 import Adminl from "./components/pages/Adminl"
 import Reviewerl from "./components/pages/Reviewerl"
 import Editorl from "./components/pages/Editorl"
 
 import Register from "./components/pages/Register";
+=======
+import Editor from "./components/pages/Editor/Editor";
+import Dashboard from "./components/pages/Editor/DashBoard";
+import DisplayWorkshop from "./components/pages/Editor/DisplayWorkshop";
+import EditWorkshop from "./components/pages/Editor/EditWorkshop";
+import NewConference from "./components/pages/Editor/Conference/NewConference";
+>>>>>>> d5ca26ef4d87ac6408ff50c2977a612fc3e3dd2a
 
 import { BrowserRouter as Router, Route } from "react-router-dom";
 
@@ -26,6 +34,7 @@ function App() {
         <Route path="/registerworkshop" exact component={RegisterWorkshop} />
         <Route path="/" exact component={Home}/>
         <Route path="/contact" exact component={Contact}/>
+<<<<<<< HEAD
         
         {/* //Path for register user and login user */}
         <Route path="/login" exact component={Login}/>
@@ -33,11 +42,15 @@ function App() {
         <Route path="/reviewerlogin" exact component={Reviewerl}/>
         <Route path="/editorlogin" exact component={Editorl}/>
         <Route path="/register" exact component={Register}/>
+=======
+        <Route path="/editor" exact component={Editor}/>
+        <Route path="/dashboardEditor" exact component={Dashboard}/>
+        <Route path="/displayworkshops" exact component={DisplayWorkshop}/>
+        <Route path="/edititem/:workshopid" exact component={EditWorkshop} />
+        <Route path="/newConference" exact component={NewConference}/>
+>>>>>>> d5ca26ef4d87ac6408ff50c2977a612fc3e3dd2a
 
       </Router>
-      
-      <hr/>
-      <Footer/>
     </div>
   );
 }
