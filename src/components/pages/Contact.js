@@ -35,7 +35,6 @@ export default function Contact() {
       });
   }
 
-<<<<<<< HEAD
     // axios.post("http://localhost:8070/message/addnewmessage", newMessage)
     //   .then(() => {
     //     alert("Service added");
@@ -44,15 +43,6 @@ export default function Contact() {
     //     alert(err);
     //   });
       
-=======
-  /*axios.post("http://localhost:8070/message/addnewmessage", newMessage)
-      .then(() => {
-        alert("Service added");
-      })
-      .catch((err) => {
-        alert(err);
-      });*/
->>>>>>> d5ca26ef4d87ac6408ff50c2977a612fc3e3dd2a
 
   return (
     <div>

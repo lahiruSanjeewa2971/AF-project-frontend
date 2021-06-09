@@ -11,6 +11,7 @@ import Login from "./components/pages/Login";
 import Adminl from "./components/pages/Adminl"
 import Reviewerl from "./components/pages/Reviewerl"
 import Editorl from "./components/pages/Editorl"
+import Editor from "./components/pages/Editor/DashBoard";
 
 import Register from "./components/pages/Register";
 
@@ -33,6 +34,8 @@ function App() {
         <Route path="/reviewerlogin" exact component={Reviewerl}/>
         <Route path="/editorlogin" exact component={Editorl}/>
         <Route path="/register" exact component={Register}/>
+        <Route path="/editor" exact component={Editor}/>
+        
 
       </Router>
     </div>
