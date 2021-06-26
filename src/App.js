@@ -12,6 +12,10 @@ import Adminl from "./components/pages/Adminl"
 import Reviewerl from "./components/pages/Reviewerl"
 import Editorl from "./components/pages/Editorl"
 import Editor from "./components/pages/Editor/DashBoard";
+import DisplayWorkshop from "./components/pages/Editor/DisplayWorkshop";
+import NewConference from "./components/pages/Editor/Conference/NewConference";
+import EditWorkshop from "./components/pages/Editor/EditWorkshop";
+import EditConference from './components/pages/Editor/Conference/EditConference';
 
 import Register from "./components/pages/Register";
 
@@ -35,7 +39,10 @@ function App() {
         <Route path="/editorlogin" exact component={Editorl}/>
         <Route path="/register" exact component={Register}/>
         <Route path="/editor" exact component={Editor}/>
-        
+        <Route path="/displayworkshops" exact component={DisplayWorkshop}/>  
+        <Route path="/newConference" exact component={NewConference}/>
+        <Route path="/edititem/:workshopid" exact component={EditWorkshop}/>
+        <Router path="/editConference/:conferenceid" exact component={EditConference} />
 
       </Router>
     </div>
