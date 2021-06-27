@@ -2,7 +2,6 @@ import axios from 'axios';
 import React,{useState} from 'react'
 // import { Component, useState } from 'react'
 import {Link} from 'react-router-dom'
-import Select from 'react-select'
 
 function Register(){
     const [user, setUser] = useState({

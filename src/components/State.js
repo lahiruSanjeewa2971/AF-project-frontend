@@ -1,9 +1,6 @@
-import React, {createContext, useState, useEffect} from 'react'
-import GuestAPI from '../API/GuestAPI'
+import React, {createContext, useState} from 'react'
 import WorkshopAPI from '../API/WorkshopAPI'
 import ResearcherAPI from '../API/ResearcherAPI'
-import axios from 'axios'
-import Test from '../Test'
 
 export const State = createContext()
 

@@ -24,6 +24,8 @@ import Register from "./components/pages/Register";
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import {DataProvider} from '../src/components/State'
 import DetailWorkshop from './components/pages/detailWorkshop/DetailWorkshop'
+import EditConference from './components/pages/Editor/Conference/EditConference';
+import NewConference from './components/pages/Editor/Conference/NewConference';
 
 
 function App() {
@@ -52,7 +54,8 @@ function App() {
         <Route path="/researcher" exact component={Researcher}/>
         <Route path="/detail/:id" exact component={DetailWorkshop} />
         <Route path="/test" exact component={Test}/>
-        
+        <Route path="/editConference/:conferenceid" exact component={EditConference} />
+        <Route path="/newConference" exact component={NewConference}/>
 
       </Router>
     </div>

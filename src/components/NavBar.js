@@ -1,4 +1,4 @@
-import React, {useState, useContext} from "react"; 
+import React, {useContext} from "react"; 
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import './CSSs/Header.css';
 import {State} from '../../src/components/State';
