@@ -2,6 +2,7 @@ import React from "react";
 import { Grid } from "@material-ui/core";
 import { Link } from 'react-router-dom';
 import '../../CSSs/dashboardEditor.css';
+import ViewConference from "./Conference/ViewConference";
 
 function DashBoard(){
     return(
@@ -16,6 +17,7 @@ function DashBoard(){
                 <Grid item xs={9} className="thirdgrid">
                     <Link to="/newConference"><button className="btn btn-outline-primary">New Conference</button></Link><br/>
                     {/*<Link to="/editor"><button className="btn btn-outline-primary">Create workshop</button><br/><br/><br/></Link>*/}
+                    <ViewConference/>
                 </Grid>
             </Grid>
         </div>
