@@ -45,6 +45,8 @@ function Login(){
 
                 <div className="row">
                     <button type="submit">login</button>
+                    {/* <Link to='/register'>Register</Link> */}
+
                     <Link to='/register'>Register</Link>
 
                 </div>

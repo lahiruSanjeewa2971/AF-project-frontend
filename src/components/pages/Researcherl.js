@@ -1,10 +1,10 @@
 import axios from 'axios';
 import React,{useState} from 'react'
 // import { Component, useState } from 'react'
-//import {Link} from 'react-router-dom'
-//import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
+import {Link} from 'react-router-dom'
+import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 
-function Adminl(){
+function Researcherl(){
     const [user, setUser] = useState({
         email:'', password:''
     })
@@ -18,13 +18,13 @@ function Adminl(){
         e.preventDefault()
         try{
 
-            await axios.post('/user/adminlogin', {...user})
+            await axios.post('/user/researcherlogin', {...user})
 
             //setItem() pass a keyName and a keyvalue, this will add that key to the given storage object or update it if already exist 
             localStorage.setItem('firstLogin', true)
 
             //used to get the current page address (URL) and to redirect the browser to a new page
-            window.location.href= "/";
+            window.location.href= "/researcher";
 
         }catch(err){
 
@@ -36,12 +36,12 @@ function Adminl(){
     return(
         <div className='login-page'>
             <form onSubmit={loginSubmit}>
-                <h2>Admin Login</h2>
-                {/* <input type="email" name="email" required 
-                placeholder="Admin Email"  value={user.email} onChange={onChangeInput}/>  */}
+                <h2>Researcher Login</h2>
+                <input type="email" name="email" required 
+                placeholder="Email"  value={user.email} onChange={onChangeInput}/> 
 
                 <input type="password" name="password" required autoComplete="on"
-                placeholder="Admin Password"  value={user.password} onChange={onChangeInput}/>
+                placeholder="Password"  value={user.password} onChange={onChangeInput}/>
 
                 <div className="container">
                     <button type="submit">login</button>
@@ -57,4 +57,4 @@ function Adminl(){
         </div>
     )
 }
-export default Adminl
+export default Researcherl
