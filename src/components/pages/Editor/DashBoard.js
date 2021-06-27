@@ -10,7 +10,7 @@ function DashBoard(){
             <Grid container xs={11} className="maingrid">
                 <Grid item xs={2} className="secondgrid">
                     <Link to="#"><button className="btn btn-outline-primary">Research papers</button><br/><br/><br/></Link>
-                    <Link to="/displayworkshops"><button className="btn btn-outline-primary">Workshops</button><br/><br/><br/></Link>
+                    <Link to="/editorViewWorkshops"><button className="btn btn-outline-primary">Workshops</button><br/><br/><br/></Link>
                     <button className="btn btn-outline-primary">Research-activities</button><br/><br/><br/>
                     
                 </Grid>

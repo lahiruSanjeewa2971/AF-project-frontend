@@ -15,6 +15,9 @@ import Editor from "./components/pages/Editor/DashBoard";
 import DisplayWorkshop from "./components/pages/Editor/DisplayWorkshop";
 import NewConference from "./components/pages/Editor/Conference/NewConference";
 import EditWorkshop from "./components/pages/Editor/EditWorkshop";
+import EditorViewWorkshop from "./components/pages/Editor/Workshop/ViewWorkshop";
+//import EditConf from './components/pages/Editor/Conference/EditConf';
+import EditSingleWorkshop from './components/pages/Editor/Workshop/EditSingleWorkshop';
 import EditConference from './components/pages/Editor/Conference/EditConference';
 
 import Register from "./components/pages/Register";
@@ -42,7 +45,12 @@ function App() {
         <Route path="/displayworkshops" exact component={DisplayWorkshop}/>  
         <Route path="/newConference" exact component={NewConference}/>
         <Route path="/edititem/:workshopid" exact component={EditWorkshop}/>
-        <Router path="/editConference/:conferenceid" exact component={EditConference} />
+        {/*<Router path="/editConferenceDisplay" exact component={EditCon} />*/}
+        
+        <Route path="/editorViewWorkshops" exact component={EditorViewWorkshop} />
+        <Route path="/editSingleWorkshop" exact component={EditSingleWorkshop} />
+        <Route path="/editConference/:conferenceid" exact component={EditConference} />
+             
 
       </Router>
     </div>
