@@ -1,17 +1,17 @@
 import 'date-fns';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 //import DatePicker from 'react-datepicker';
 import "react-datepicker/dist/react-datepicker.css";
 import DateFnsUtils from '@date-io/date-fns';
 import {MuiPickersUtilsProvider, KeyboardDatePicker, KeyboardTimePicker} from '@material-ui/pickers';
 import uniqid from 'uniqid';
 import axios from 'axios';
+import moment from 'moment';
 
 function NewConference(){
     //const [date, setDate] = useState(new Date());
 
-    const [selectedDate, setSelectedDate] = useState(new Date('2014-08-18T21:11:54'));
-    
+    const [selectedDate, setSelectedDate] = useState(new Date());
     const [title, setTitle] = useState('');
     const [location, setLocation] = useState('');
     const [description, setDescription] = useState('');
@@ -64,7 +64,7 @@ function NewConference(){
                                 'aria-label': 'change date',
                             }}
                         />
-                        <KeyboardTimePicker
+                        {/*<KeyboardTimePicker
                             margin="normal"
                             id="time-picker"
                             label="Time picker"
@@ -73,7 +73,7 @@ function NewConference(){
                             KeyboardButtonProps={{
                                 'aria-label': 'change time',
                             }}
-                        />
+                        />*/}
                     </MuiPickersUtilsProvider>
                     <div className="container">
                         <input type="text" className="form-control" placeholder="Location"

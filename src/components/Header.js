@@ -1,11 +1,16 @@
-import React from "react";
+import React, {useState, useContext} from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import './CSSs/Header.css';
 import {Navbar,  NavDropdown} from 'react-bootstrap';
+import {State} from '../../src/components/State'
+import {Link} from 'react-router-dom'
 
 
 
 function Header() {
+
+    const stateHeader = useContext(State)
+    console.log(stateHeader)
   return (
     <div className="main">
         <Navbar className="navbar navbar-expand-lg navbar-light bg-light">

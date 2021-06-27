@@ -11,6 +11,14 @@
     letter-spacing: 2px;
     color:saddlebrown;
 }
+.list{
+    max-width: 300px;
+    border: 2px solid rgb(4, 155, 245);
+    border-radius: 3px;
+    padding:20px;
+    margin:30px auto;
+
+}
 .login-page form input,
 .login-page form button{
     width: 100%;
