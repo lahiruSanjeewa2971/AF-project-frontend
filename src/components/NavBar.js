@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useContext} from "react"; 
 import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 import './CSSs/Header.css';
+import {State} from '../../src/components/State';
 
 export default function NavBar(){
+    const stateHeader = useContext(State)
+    console.log(stateHeader)
     return(
         <div>
             <Navbar bg="light" expand="lg">
@@ -16,7 +19,8 @@ export default function NavBar(){
                 <Nav.Link href="#link">KeyNotes</Nav.Link>
                 <NavDropdown title="Workshop" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/registerworkshop">Register</NavDropdown.Item>
-                    <NavDropdown.Item href="#">Workshops</NavDropdown.Item>
+                    <NavDropdown.Item href="/worshopDetails">Workshops</NavDropdown.Item>
+                    <NavDropdown.Item href="/test">TEST</NavDropdown.Item>
                 </NavDropdown>
                 <Nav.Link href="#link">Committee</Nav.Link>
                 <Nav.Link href="#link">Past Proceedings</Nav.Link>
@@ -25,6 +29,8 @@ export default function NavBar(){
                 <NavDropdown title="Login|Register" id="basic-nav-dropdown">
                     <NavDropdown.Item href="/login">Login</NavDropdown.Item>
                     <NavDropdown.Item href="/register">Register</NavDropdown.Item>
+                    <NavDropdown.Item href="/researcherlogin">Researcher Login</NavDropdown.Item>
+                    <NavDropdown.Item href="/workshoplogin">Workshop Conductor Login</NavDropdown.Item>
                 </NavDropdown>
             </Nav>
             

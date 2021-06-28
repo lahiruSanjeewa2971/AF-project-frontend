@@ -13,3 +13,9 @@ code {
 }
 
 @import url("./components/CSSs/login.css");
+
+@import url("./components/WorkshopsN/workshopsN.css");
+
+@import url("./components/pages/detailWorkshop/detailWorkshop.css");
+
+@import url("./components/Researcher/researcher.css");

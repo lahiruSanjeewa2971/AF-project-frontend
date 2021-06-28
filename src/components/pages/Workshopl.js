@@ -2,13 +2,9 @@ import axios from 'axios';
 import React,{useState} from 'react'
 // import { Component, useState } from 'react'
 import {Link} from 'react-router-dom'
-<<<<<<< HEAD
-import { NavDropdown} from 'react-bootstrap';
-=======
-import {NavDropdown} from 'react-bootstrap';
->>>>>>> 1a87649ea547a51ff6fca875f55cc3b05bf259a9
+import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
 
-function Login(){
+function Workshopl(){
     const [user, setUser] = useState({
         email:'', password:''
     })
@@ -22,13 +18,13 @@ function Login(){
         e.preventDefault()
         try{
 
-            await axios.post('/user/login', {...user})
+            await axios.post('/user/workshoplogin', {...user})
 
             //setItem() pass a keyName and a keyvalue, this will add that key to the given storage object or update it if already exist 
             localStorage.setItem('firstLogin', true)
 
             //used to get the current page address (URL) and to redirect the browser to a new page
-            window.location.href= "/";
+            window.location.href= "/workshopsN";
 
         }catch(err){
 
@@ -40,31 +36,25 @@ function Login(){
     return(
         <div className='login-page'>
             <form onSubmit={loginSubmit}>
-                <h2>Login</h2>
+                <h2>Workshop Conductor Login</h2>
                 <input type="email" name="email" required 
                 placeholder="Email"  value={user.email} onChange={onChangeInput}/> 
 
                 <input type="password" name="password" required autoComplete="on"
                 placeholder="Password"  value={user.password} onChange={onChangeInput}/>
 
-                <div className="row">
+                <div className="container">
                     <button type="submit">login</button>
-                    {/* <Link to='/register'>Register</Link> */}
-
-                    <Link to='/register'>Register</Link>
+                    
 
                 </div>
 
             </form>
            <div>
-           <NavDropdown title="STAFF MEMBERS" id="basic-nav-dropdown">
-                    <NavDropdown.Item href="/adminlogin">Admin Login</NavDropdown.Item>
-                    <NavDropdown.Item href="/reviewerlogin">Reviewer Login</NavDropdown.Item>
-                    <NavDropdown.Item href="/editorlogin">Editor Login</NavDropdown.Item>
-                </NavDropdown>
+          
             
            </div>
         </div>
     )
 }
-export default Login
+export default Workshopl
