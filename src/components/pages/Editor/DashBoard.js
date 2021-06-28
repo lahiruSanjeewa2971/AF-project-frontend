@@ -14,10 +14,13 @@ function DashBoard(){
                     <button className="btn btn-outline-primary">Research-activities</button><br/><br/><br/>
                     
                 </Grid>
-                <Grid item xs={9} className="thirdgrid">
+                <Grid item xs={8} className="thirdgrid">
                     <Link to="/newConference"><button className="btn btn-outline-primary">New Conference</button></Link><br/>
                     {/*<Link to="/editor"><button className="btn btn-outline-primary">Create workshop</button><br/><br/><br/></Link>*/}
                     <ViewConference/>
+                </Grid>
+                <Grid item xs={1}>
+                    <Link to="/displayUsers"><button className="btn btn-outline-primary">Users</button></Link><br/>
                 </Grid>
             </Grid>
         </div>

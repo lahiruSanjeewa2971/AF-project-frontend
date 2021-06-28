@@ -6,7 +6,6 @@ import DateFnsUtils from '@date-io/date-fns';
 import {MuiPickersUtilsProvider, KeyboardDatePicker, KeyboardTimePicker} from '@material-ui/pickers';
 import uniqid from 'uniqid';
 import axios from 'axios';
-import moment from 'moment';
 
 function NewConference(){
     //const [date, setDate] = useState(new Date());

@@ -27,6 +27,8 @@ import DetailWorkshop from './components/pages/detailWorkshop/DetailWorkshop'
 import EditConference from './components/pages/Editor/Conference/EditConference';
 import NewConference from './components/pages/Editor/Conference/NewConference';
 
+import DisplayUsers from './components/pages/Editor/UsersDisplay/DisplayUsers';
+
 
 function App() {
   return (
@@ -56,6 +58,7 @@ function App() {
         <Route path="/test" exact component={Test}/>
         <Route path="/editConference/:conferenceid" exact component={EditConference} />
         <Route path="/newConference" exact component={NewConference}/>
+        <Route path="/displayUsers" exact component={DisplayUsers}/>
 
       </Router>
     </div>
