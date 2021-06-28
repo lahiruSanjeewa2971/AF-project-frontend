@@ -1,12 +1,9 @@
 import axios from 'axios';
 import React,{useState} from 'react'
 // import { Component, useState } from 'react'
-<<<<<<< HEAD
 
-=======
 //import {Link} from 'react-router-dom'
 //import {Navbar, Nav, NavDropdown} from 'react-bootstrap';
->>>>>>> 1a87649ea547a51ff6fca875f55cc3b05bf259a9
 
 function Reviewerl(){
     const [user, setUser] = useState({

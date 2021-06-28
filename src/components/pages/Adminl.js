@@ -24,11 +24,7 @@ function Adminl(){
             localStorage.setItem('firstLogin', true)
 
             //used to get the current page address (URL) and to redirect the browser to a new page
-<<<<<<< HEAD
             window.location.href= "/admindashboard";
-=======
-            window.location.href= "/editor";
->>>>>>> 1a87649ea547a51ff6fca875f55cc3b05bf259a9
 
         }catch(err){
 
