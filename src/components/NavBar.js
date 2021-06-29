@@ -9,7 +9,7 @@ export default function NavBar(){
     const stateHeader = useContext(State)
     //console.log(stateHeader)
     return(
-        
+         
         <div>
             <Navbar bg="light" expand="lg">
             <a class="navbar-brand" id="logo" href="/">
