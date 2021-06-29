@@ -1,35 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { Grid } from '@material-ui/core';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
-import Avatar from '@material-ui/core/Avatar';
-import IconButton from '@material-ui/core/IconButton';
-import ShareIcon from '@material-ui/icons/Share'
-import { makeStyles } from '@material-ui/core/styles';
-import Typography from '@material-ui/core/Typography';
-
-const useStyles = makeStyles((theme) => ({
-  
-    media: {
-      height: 0,
-      paddingTop: '56.25%', // 16:9
-    },
-    expand: {
-      transform: 'rotate(0deg)',
-      marginLeft: 'auto',
-      transition: theme.transitions.create('transform', {
-        duration: theme.transitions.duration.shortest,
-      }),
-    },
-    expandOpen: {
-      transform: 'rotate(180deg)',
-    },
-}));
+import { Typography } from '@material-ui/core';
 
 function HomePageDisplayConferences(){
-    const classes = useStyles();
+    
     const [postdata, setPostdata] = useState([]);
 
     useEffect(() => {
@@ -45,27 +23,38 @@ function HomePageDisplayConferences(){
     const ListAllConferences = (props) => {
         return(
             <div>
-                <Card style={{width:'50%'}}>
+                <Card style={{backgroundColor:'#b2dfdb'}}>
                     <CardHeader title={props.record.title}/>
-                </Card> 
-                <CardContent>
-                <Typography variant="body2" color="textSecondary" component="p">
-          This impressive paella is a perfect party dish and a fun meal to cook together with your
-          guests. Add 1 cup of frozen peas along with the mussels, if you like.
-        </Typography>
-                </CardContent>
+                    <CardContent>
+                        <Typography>
+                            {props.record.date}
+                        </Typography>
+                        <Typography>
+                            {props.record.note}
+                        </Typography>
+                    </CardContent>
+                </Card>
             </div>
         )
     }
 
     const conferenceAll = postdata.map((post) => {
         return (
-            <ListAllConferences record = {post}/>
+            <div className="row justify-content-center" style={{padding:'30px 30px 30px 30px'}}>
+                <Grid item style={{width:'600px'}}>
+                    <ListAllConferences record = {post}/>
+                </Grid>
+            </div>
         )
     })
 
     return(
-        <div>{conferenceAll}</div>
+        <div>
+            <h2>Upcoming Events.</h2>
+            <Grid container spacing={2} className="row justify-content-center">
+                {conferenceAll}
+            </Grid>
+        </div>
     )
 }
 export default HomePageDisplayConferences;
