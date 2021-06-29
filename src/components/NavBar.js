@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom'
 import axios from 'axios'
 
 export default function NavBar(){
-<<<<<<< HEAD
     // const stateHeader = useContext(State)
     // console.log(stateHeader)
 
@@ -95,10 +94,6 @@ export default function NavBar(){
             </>
         )
     }
-=======
-    const stateHeader = useContext(State)
-    //console.log(stateHeader)
->>>>>>> 4ef7ef5f29a4a310e94c7613d80d3bb01a9dc13e
     return(
         
         <div>
