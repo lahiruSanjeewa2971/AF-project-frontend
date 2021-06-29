@@ -1,10 +1,13 @@
-import React, {useState, useContext} from "react";
+import React, {useContext} from "react";
 import "bootstrap/dist/css/bootstrap.css";
 import './CSSs/Header.css';
 import {Navbar,  NavDropdown} from 'react-bootstrap';
 import {State} from '../../src/components/State'
+<<<<<<< HEAD
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+=======
+>>>>>>> 4ef7ef5f29a4a310e94c7613d80d3bb01a9dc13e
 
 
 

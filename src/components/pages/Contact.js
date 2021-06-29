@@ -86,7 +86,7 @@ export default function Contact() {
               />
             </Form.Group>
             <Button
-              style={{ fontSize: "28px" }}
+              style={{ fontSize: "28px", paddingBottom:'48px'}}
               variant="outlined"
               color="primary"
               size="large"

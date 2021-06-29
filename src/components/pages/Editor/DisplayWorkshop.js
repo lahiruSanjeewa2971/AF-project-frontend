@@ -39,7 +39,7 @@ function DisplayWorkshop(){
                 <td>{props.record.category}</td>
                 <td>{props.record.status}</td>
                 <td>
-                    <a href={`/edititem/${props.record.workshopid}`}>Click</a>
+                    <a href={`/edititem/${props.record.workshop_id}`}>Click</a>
                 </td>
             </tr>
         )

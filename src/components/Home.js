@@ -3,6 +3,7 @@ import "./CSSs/Home.css";
 import Background from "../images/Background.jpeg";
 import { Card, Grid } from '@material-ui/core';
 import CountdownTimer from "./pages/CountDownTimer";
+import HomePageDisplayConferences from './pages/Editor/HomePageDisplay/HomePageDisplayConferences';
 import Footer from "./Footer";
 
 var sectionStyle = {
@@ -34,6 +35,7 @@ function Home(){
                 </Grid>
             </section>
             <CountdownTimer/>
+            <HomePageDisplayConferences/>
             
             <hr/>
             <Footer/>

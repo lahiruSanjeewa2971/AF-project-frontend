@@ -6,7 +6,6 @@ import DateFnsUtils from '@date-io/date-fns';
 import {MuiPickersUtilsProvider, KeyboardDatePicker, KeyboardTimePicker} from '@material-ui/pickers';
 import uniqid from 'uniqid';
 import axios from 'axios';
-import moment from 'moment';
 
 function NewConference(){
     //const [date, setDate] = useState(new Date());
@@ -31,7 +30,7 @@ function NewConference(){
             note,
             conferenceid: uniqid(),
         };
-        axios.post("http://localhost:8070/conference/addconference", newConference)
+        axios.post("http://localhost:8070/conferences/addconference", newConference)
             .then(() => {
                 alert("Conference ADD");
             }).catch((err)=>{

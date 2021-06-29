@@ -12,13 +12,12 @@ function EditWorkshop(){
     const [status, setSatus] = useState("");
 
     useEffect(()=>{
-        axios.post("http://localhost:8070/workshop/getworkshop", {workshopid: params.workshopid}).then(res=>{
+        axios.post("http://localhost:8070/workshop/getworkshop", {workshop_id: params.workshop_id}).then(res=>{
             const postData = res.data[0];
 
-            setName(postData.name);
             setTitle(postData.title);
-            setPlace(postData.place);
-            setGuestSpeaker(postData.guestSpeaker);
+            setPlace(postData.time);
+            setGuestSpeaker(postData.date);
             setSatus(postData.status);
         }).catch((err) =>{
             console.log(err)
@@ -65,12 +64,7 @@ function EditWorkshop(){
     return (
         <div>
             <form onSubmit={EditItem}>
-                <div className="container">
-                    <input type="text" className="form-control" id="name" placeholder="Item name" value={name}
-                        onChange={(e)=>{
-                            setName(e.target.value);
-                    }}/><br/>
-                </div>
+                
                 <div className="container">
                     <input type="text" className="form-control" id="title" placeholder="Item name" value={title}
                         onChange={(e)=>{
@@ -83,21 +77,9 @@ function EditWorkshop(){
                             setPlace(e.target.value);
                     }}/><br/>
                 </div>
-                <div className="container">
-                    <input type="text" className="form-control" id="guestSpeaker" placeholder="Item name" value={guestSpeaker}
-                        onChange={(e)=>{
-                            setGuestSpeaker(e.target.value);
-                    }}/><br/>
-                </div>
-                <div className="container">
-                    <input type="text" className="form-control" id="status" placeholder="Item name" value={status}
-                        onChange={(e)=>{
-                            setSatus(e.target.value);
-                    }}/><br/>
-                    <button className="btn btn-outline-primary">Update Status After the check</button>
-                </div>
             </form>
         </div>
     )
 }
+//onClick={setData}
 export default EditWorkshop;

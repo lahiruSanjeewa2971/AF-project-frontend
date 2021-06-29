@@ -2,7 +2,7 @@ import axios from 'axios';
 import React,{useState} from 'react'
 // import { Component, useState } from 'react'
 import {Link} from 'react-router-dom'
-import {NavDropdown} from 'react-bootstrap';
+import { NavDropdown} from 'react-bootstrap';
 
 function Login(){
     const [user, setUser] = useState({
