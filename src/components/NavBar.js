@@ -42,7 +42,7 @@ export default function NavBar(){
         return(
             <>
                  <li className= "nav-item"><a class="nav-link" href="/create_research">
-                 Add Research
+                 Add Researches
                  </a></li>
 
                  <li className= "nav-item"><a class="nav-link" href="/researcher">
