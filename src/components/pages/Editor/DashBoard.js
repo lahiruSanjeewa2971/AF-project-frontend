@@ -8,9 +8,9 @@ function DashBoard(){
     return(
         <div className="main">
             <Grid container xs={11} className="maingrid">
-                <Grid item xs={2} className="secondgrid">
+                <Grid item xs={3} className="secondgrid">
                     <Link to="#"><button className="btn btn-outline-primary">Research papers</button><br/><br/><br/></Link>
-                    <Link to="/editorViewWorkshops"><button className="btn btn-outline-primary">Workshops</button><br/><br/><br/></Link>
+                    <Link to="/viewallworkshopseditor"><button className="btn btn-outline-primary">Workshops</button><br/><br/><br/></Link>
                     <button className="btn btn-outline-primary">Research-activities</button><br/><br/><br/>
                     
                 </Grid>
@@ -20,9 +20,9 @@ function DashBoard(){
                     {/*<ViewConference/>*/}
                     {<EditorAllConferenceView/>}
                 </Grid>
-                <Grid item xs={1}>
+                {/*<Grid item xs={1}>
                     <Link to="/displayUsers"><button className="btn btn-outline-primary">Users</button></Link><br/>
-                </Grid>
+                </Grid>*/}
             </Grid>
         </div>
     )

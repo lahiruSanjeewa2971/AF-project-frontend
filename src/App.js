@@ -37,6 +37,7 @@ import NewConference from './components/pages/Editor/Conference/NewConference';
 
 import DisplayUsers from './components/pages/Editor/UsersDisplay/DisplayUsers';
 import ViewSingleConference from './components/pages/Editor/Conference/ViewSingleConference';
+import EditorViewAllWorkshops from './components/pages/Editor/Workshop/EditorViewAllWorkshops';
 
 
 function App() {
@@ -74,6 +75,7 @@ function App() {
         <Route path="/editConference/:conferenceid" exact component={ViewSingleConference} />
         <Route path="/newConference" exact component={NewConference}/>
         <Route path="/displayUsers" exact component={DisplayUsers}/>
+        <Route path="/viewallworkshopseditor" exact component={EditorViewAllWorkshops} />
 
       </Router>
     </div>

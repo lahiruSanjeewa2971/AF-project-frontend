@@ -30,7 +30,7 @@ function NewConference(){
             note,
             conferenceid: uniqid(),
         };
-        axios.post("http://localhost:8070/conference/addconference", newConference)
+        axios.post("http://localhost:8070/conferences/addconference", newConference)
             .then(() => {
                 alert("Conference ADD");
             }).catch((err)=>{

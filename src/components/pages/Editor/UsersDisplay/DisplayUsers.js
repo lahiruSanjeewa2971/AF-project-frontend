@@ -6,7 +6,7 @@ function DisplayUsers(){
     const [postData, setPostData] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8070/conference/displayallConferences").then((res) => {
+        axios.get("http://localhost:8070/tempuser/displayusers").then((res) => {
             setPostData(res.data);
         })
         .catch((err) => {
@@ -26,12 +26,11 @@ function DisplayUsers(){
                         backgroundColor:'red',
                         paddingBottom:'10px',
                         marginLeft: '17%'}}>
-                            <h2>{props.record.title}</h2>
-                            <h2>{props.record.date}</h2>
-                            <h2>{props.record.location}</h2>
-                            <h2>{props.record.description}</h2>
-                            <h2>{props.record.note}</h2>
-                            <h2>Status : {props.record.status}</h2>  
+                            <h2>Role :{props.record.role}</h2>
+                            <h2>User Email :{props.record.email}</h2>
+                            <h2>Mobile :{props.record.mobile}</h2>
+                            <h2>User name :{props.record.name}</h2>
+                            
                             {/*<a className="btn btn-danger" href={`/editConference/${props.record.conferenceid}`}>Admin acceptance</a>
                             <Link to={`/editConf/${props.record.conferenceid}`}><button className="btn btn-outline-primary">New Conference</button></Link><br/>
                             <Link to={`/editConf/${props.record.conferenceid}`}><li className="btn btn-info">Edit</li></Link>*/}
@@ -50,7 +49,10 @@ function DisplayUsers(){
     })
 
     return(
-        <div>{conferenceList}</div>
+        <div>
+            <h2>Saved Users</h2>
+            {conferenceList}
+        </div>
     )
 
 }
