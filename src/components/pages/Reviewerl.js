@@ -25,7 +25,7 @@ function Reviewerl(){
             localStorage.setItem('firstLogin', true)
 
             //used to get the current page address (URL) and to redirect the browser to a new page
-            window.location.href= "/";
+            window.location.href= "/reviewer";
 
         }catch(err){
 

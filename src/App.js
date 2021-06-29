@@ -17,6 +17,17 @@ import Editor from "./components/pages/Editor/DashBoard";
 import AdminDashBoard from "./components/pages/admin/adminDashboard";
 import Register from "./components/pages/Register";
 
+
+
+
+import Reviewer from './components/pages/Reviwer/Rdashboard';
+import Listworkshops from "./components/pages/Reviwer/Workshops/ListWorkshops";
+import ListResearchers from "./components/pages/Reviwer/Researcher/ListResearchers";
+import AcceptWorkshops from "./components/pages/Reviwer/AcceptWorkshops";
+import AllWorkshopView from  "./components/pages/Reviwer/Workshops/AllWorkshopView";
+import CheckedWorkshops from  "./components/pages/Reviwer/Workshops/CheckedWorkshops";
+
+
 import { BrowserRouter as Router, Route } from "react-router-dom";
 import DisplayWorkshop from './components/pages/Editor/DisplayWorkshop';
 import EditWorkshop from './components/pages/Editor/EditWorkshop';
@@ -76,8 +87,18 @@ function App() {
         <Route path="/editConference/:conferenceid" exact component={ViewSingleConference} />
         <Route path="/newConference" exact component={NewConference}/>
         <Route path="/displayUsers" exact component={DisplayUsers}/>
-        <Route path="/viewallworkshopseditor" exact component={EditorViewAllWorkshops} />
+        <Route path="/viewallworkshopseditor" exact component={EditorViewAllWorkshops} />        
         <Route path="/viewmoredetails" exact component={ViewMoreDetails} />
+
+
+
+        <Route path="/reviewer" exact component={Reviewer}/>
+        <Route path="/allworkshopview" exact component={AllWorkshopView} />
+        <Route path="/checkedworkshops" exact component={CheckedWorkshops} />
+        <Route path="/listworkshops" exact component={Listworkshops}/>
+        {/* <Route path="/listconferences" exact component={ListConference}/> */}
+        <Route path="/listresearchers" exact component={ListResearchers}/>        
+        <Route path="/acceptworkshops/:workshopid" exact component={AcceptWorkshops}/>
 
       </Router>
     </div>
