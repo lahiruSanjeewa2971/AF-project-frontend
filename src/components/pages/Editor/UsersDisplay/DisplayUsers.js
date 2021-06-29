@@ -6,7 +6,7 @@ function DisplayUsers(){
     const [postData, setPostData] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8070/conference/displayall").then((res) => {
+        axios.get("http://localhost:8070/conference/displayallConferences").then((res) => {
             setPostData(res.data);
         })
         .catch((err) => {

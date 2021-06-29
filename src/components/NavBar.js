@@ -5,7 +5,7 @@ import {State} from '../../src/components/State';
 
 export default function NavBar(){
     const stateHeader = useContext(State)
-    console.log(stateHeader)
+    //console.log(stateHeader)
     return(
         <div>
             <Navbar bg="light" expand="lg">

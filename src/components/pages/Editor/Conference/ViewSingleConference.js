@@ -2,11 +2,9 @@ import React, {useEffect, useState} from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import axios from "axios";
 
-
-function EditConference(){
+function ViewSingleConference(){
     const params = useParams();
 
-    //const [servicename, setServicename] = useState("");
     const [title, setTitle] = useState("");
     const [date, setDate] = useState("");
     const [location, setLocation] = useState("");
@@ -15,8 +13,7 @@ function EditConference(){
     const [status, setStatus] = useState("");
 
     useEffect(() => {
-        axios.post("http://localhost:8070/conference/getConference", {conferenceid: params.conferenceid}).then(res => {
-            
+        axios.post("http://localhost:8070/adminConference/getSingleConference", {conferenceid: params.conferenceid}).then(res => {
             const postdata = res.data[0];
             setTitle(postdata.title);
             setDate(postdata.date);
@@ -24,56 +21,53 @@ function EditConference(){
             setDescription(postdata.description);
             setNote(postdata.note);
             setStatus(postdata.status);
-
         }).catch((err) => {
             console.log(err)
         })
-
     }, [])
-
-    return(
+    return (
         <div>
-            
+            <h3>Edit Conference details.</h3><br/>
             <form>
                 <div className="container">
-                    <input type="text" className="form-control" id="note" placeholder="Notes" value={title}
-                    onChange={(e)=>{
+                    <input type="text" className="form-control" value={title} 
+                    onChange={(e) => {
                         setTitle(e.target.value);
-                    }}/><br/>
+                    }}/>
                 </div>
                 <div className="container">
-                    <input type="text" className="form-control" id="note" placeholder="Notes" value={date}
-                    onChange={(e)=>{
+                    <input type="text" className="form-control" value={date} 
+                    onChange={(e) => {
                         setDate(e.target.value);
-                    }}/><br/>
+                    }}/>
                 </div>
                 <div className="container">
-                    <input type="text" className="form-control" id="note" placeholder="Notes" value={location}
-                    onChange={(e)=>{
+                    <input type="text" className="form-control" value={location} 
+                    onChange={(e) => {
                         setLocation(e.target.value);
-                    }}/><br/>
+                    }}/>
                 </div>
                 <div className="container">
-                    <input type="text" className="form-control" id="note" placeholder="Notes" value={description}
-                    onChange={(e)=>{
+                    <input type="text" className="form-control" value={description} 
+                    onChange={(e) => {
                         setDescription(e.target.value);
-                    }}/><br/>
+                    }}/>
                 </div>
                 <div className="container">
-                    <input type="text" className="form-control" id="note" placeholder="Notes" value={note}
-                    onChange={(e)=>{
+                    <input type="text" className="form-control" value={note} 
+                    onChange={(e) => {
                         setNote(e.target.value);
-                    }}/><br/>
+                    }}/>
                 </div>
                 <div className="container">
-                    <input type="text" className="form-control" id="note" placeholder="Notes" value={status}
-                    onChange={(e)=>{
+                    <input type="text" className="form-control" value={status} 
+                    onChange={(e) => {
                         setStatus(e.target.value);
-                    }}/><br/>
-                </div>
+                    }}/>
+                </div><br/>
+                <button className="btn btn-outline-primary" >ADD new Conference</button>
             </form>
-            
         </div>
     )
 }
-export default EditConference
+export default ViewSingleConference;
