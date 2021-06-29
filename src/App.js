@@ -27,6 +27,7 @@ import WorkshopDetails from './components/pages/Workshop/WorkshopDetails';
 import WorkshopsN from './components/WorkshopsN/WorkshopsN';
 import Researcher from './components/Researcher/Researcher';
 import Test from './Test'
+import AdminViewWorkshopsAll from './components/pages/admin/Workshops/AdminViewWorkshopsAll';
 
 
 
@@ -39,6 +40,7 @@ import DisplayUsers from './components/pages/Editor/UsersDisplay/DisplayUsers';
 import ViewSingleConference from './components/pages/Editor/Conference/ViewSingleConference';
 import EditorViewAllWorkshops from './components/pages/Editor/Workshop/EditorViewAllWorkshops';
 import ViewMoreDetails from './components/pages/Editor/HomePageDisplay/ViewMoreDetails';
+import AdminViewAllUsers from './components/pages/admin/Users/AdminViewAllUsers';
 
 
 function App() {
@@ -78,6 +80,8 @@ function App() {
         <Route path="/displayUsers" exact component={DisplayUsers}/>
         <Route path="/viewallworkshopseditor" exact component={EditorViewAllWorkshops} />
         <Route path="/viewmoredetails" exact component={ViewMoreDetails} />
+        <Route path="/viewworkshops" exact component={AdminViewWorkshopsAll} />
+        <Route path="/adminviewAllUsers" exact component={AdminViewAllUsers} />
 
       </Router>
     </div>
