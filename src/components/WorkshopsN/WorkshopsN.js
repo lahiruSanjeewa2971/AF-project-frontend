@@ -5,6 +5,7 @@ import WorkshopItem from '../Item/WorkshopItem'
 function WorkshopsN(){
     const state = useContext(State)
     const [workshopsN] = state.workshopAPI.workshopsN
+    const [isConductor] = state.guestAPI.isConductor
     
 
    
@@ -12,7 +13,8 @@ function WorkshopsN(){
         <div className="workshopsN">
           {
               workshopsN.map(workshops => {
-                  return <WorkshopItem key={workshops._id} workshops={workshops} />
+                  return <WorkshopItem key={workshops._id} workshops={workshops} 
+                  isConductor={isConductor}/>
               })
           }
         </div>

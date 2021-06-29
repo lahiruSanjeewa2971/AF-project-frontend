@@ -4,7 +4,11 @@ import axios from 'axios'
 function GuestAPI(token){
 
     const [unLogged, setunLogged] = useState(false)
-    const [unAdmin, setAdmin] = useState(false)
+    const [isAttendee, setIsAttendee] = useState(false)
+    const [isResearcher, setIsResearcher] = useState(false)
+    const [isConductor, setIsConductor] = useState(false)
+    const [cart, setCart] = useState([])
+    
 
     useEffect(()=>{
         if(token){
@@ -14,8 +18,10 @@ function GuestAPI(token){
                         headers: {Authorization: token}
                     })
                     setunLogged(true)
-                    res.data.role === 1 ? setAdmin(true) : setAdmin(false)
-                    console.log(res)
+                    res.data.role === 0 ? setIsAttendee(true) : setIsAttendee(false) 
+                    res.data.role === 1 ? setIsResearcher(true) : setIsResearcher(false) 
+                    res.data.role === 2 ? setIsConductor(true) : setIsConductor(false)
+                    
                 }catch(err){
                     alert(err.response.data.msg)
                 }
@@ -25,9 +31,27 @@ function GuestAPI(token){
         }
     },[token])
 
+    const addPay = async (researche) => {
+        if(!isResearcher) return alert("Please login as Researcher to continue")
+
+        const check = cart.every(item =>{
+            return item._id !== researche._id
+        })
+
+        if(check){
+            setCart([...cart, {...researche, quantity: 1}])
+        }else{
+            alert("Added to cart!")
+        }
+    }
+
     return{
        unLogged:  [unLogged, setunLogged],
-       unAdmin: [unAdmin, setAdmin]
+       isAttendee: [isAttendee, setIsAttendee],
+       isResearcher: [isResearcher, setIsResearcher],
+       isConductor: [isConductor, setIsConductor],
+       cart: [cart, setCart],
+       addPay: addPay
     }
 
 }

@@ -21,18 +21,18 @@
 }
 
 .researcher input{
-    width: 210px;
+    width: 310px;
 }
 
 .researcher button{
-    width: 70px;
-    background: cadetblue;
-    color: chocolate;
+    width: 170px;
+    background: black;
+    color: greenyellow;
     margin-left: 15px;
 }
 
 .researcher .row{
-    min-width: 200px;
+    min-width: 500px;
     display: flex;
     justify-content: space-between;
     align-items: center;
