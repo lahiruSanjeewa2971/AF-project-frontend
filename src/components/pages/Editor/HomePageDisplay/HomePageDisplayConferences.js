@@ -5,6 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import { Typography } from '@material-ui/core';
+import { Link } from 'react-router-dom';
 
 function HomePageDisplayConferences(){
     
@@ -23,15 +24,18 @@ function HomePageDisplayConferences(){
     const ListAllConferences = (props) => {
         return(
             <div>
-                <Card style={{backgroundColor:'#b2dfdb'}}>
+                <Card style={{backgroundColor:'#e0f7fa'}}>
                     <CardHeader title={props.record.title}/>
                     <CardContent>
                         <Typography>
                             {props.record.date}
                         </Typography>
-                        <Typography>
+                        <Typography style={{paddingBottom:'3px'}}>
                             {props.record.note}
                         </Typography>
+                        {/*<button className="btn btn-outline-primary">Click for more Details</button>*/}
+                        <Link to="/viewmoredetails">Click for more Details</Link>
+                        
                     </CardContent>
                 </Card>
             </div>

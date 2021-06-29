@@ -16,6 +16,7 @@ function DashBoard(){
                 </Grid>
                 <Grid item xs={8} className="thirdgrid">
                     <Link to="/newConference"><button className="btn btn-outline-primary">New Conference</button></Link><br/>
+                    <Link to="/viewmoredetails">Click for more Details</Link>
                     {/*<Link to="/editor"><button className="btn btn-outline-primary">Create workshop</button><br/><br/><br/></Link>*/}
                     {/*<ViewConference/>*/}
                     {<EditorAllConferenceView/>}
