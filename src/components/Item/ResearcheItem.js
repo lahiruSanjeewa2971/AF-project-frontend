@@ -3,7 +3,7 @@ import React from 'react'
 function ResearcheItem({researche}) {
     return(
         <div className="researche_card">
-            {/* <img src={researche.images.result} alt=""/> */}
+            <img src={researche.images.result} alt=""/>
 
             <div className="researche_box">
             <h2 title={researche.title}>{researche.title}</h2>
