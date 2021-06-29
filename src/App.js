@@ -17,6 +17,7 @@ import Editor from "./components/pages/Editor/DashBoard";
 import WorkshopDetails from './components/pages/Workshop/WorkshopDetails';
 import WorkshopsN from './components/WorkshopsN/WorkshopsN';
 import Researcher from './components/Researcher/Researcher';
+import Cart from './cart/Cart'
 import Test from './Test'
 
 import Register from "./components/pages/Register";
@@ -50,6 +51,7 @@ function App() {
         <Route path="/worshopDetails" exact component={WorkshopDetails} />
         <Route path="/workshopsN" exact component={WorkshopsN}/>
         <Route path="/researcher" exact component={Researcher}/>
+        <Route path="/cart" exact component={Cart}/>
         <Route path="/detail/:id" exact component={DetailWorkshop} />
         <Route path="/test" exact component={Test}/>
         

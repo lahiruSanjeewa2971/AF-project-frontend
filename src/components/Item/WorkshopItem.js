@@ -4,8 +4,11 @@ import {Link} from 'react-router-dom'
 function WorkshopItem({workshops}){
   
     return (
+       
+       
         
         <div className="workshops_card">
+        
             {/* //check url vs result while inserting */}
             <img src={workshops.images.result} alt=""/>
             
@@ -23,6 +26,7 @@ function WorkshopItem({workshops}){
 
             
         </div>
+        
         
         
         

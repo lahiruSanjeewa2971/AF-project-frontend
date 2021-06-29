@@ -1,20 +1,17 @@
 import {useState, useEffect} from 'react'
 import axios from 'axios'
 
-function ResearcherAPI(token){
+function ResearcherAPI(){
     const [researcher, setResearcher] = useState([])
 
-   
+    const getResearcher = async () =>{
+        
+        const res = await axios.get('/api/researcher')
+        setResearcher(res.data.researcher)
+    }
 
     useEffect(() =>{
-        const getResearcher = async () =>{
-        
-            const res = await axios.get('/api/researcher')
-            setResearcher(res.data)
-        }
-
         getResearcher()
-
     },[])
     return{
         researcher: [researcher, setResearcher]

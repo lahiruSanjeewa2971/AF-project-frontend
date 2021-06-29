@@ -4,13 +4,47 @@ import './CSSs/Header.css';
 import {Navbar,  NavDropdown} from 'react-bootstrap';
 import {State} from '../../src/components/State'
 import {Link} from 'react-router-dom'
+import axios from 'axios'
 
 
 
 function Header() {
 
-    const stateHeader = useContext(State)
-    console.log(stateHeader)
+    // const stateHeader = useContext(State)
+    // console.log(stateHeader)
+
+    const state = useContext(State)
+    const [unLogged, setunLogged] = state.guestAPI.unLogged
+    const [isResearcher, setIsResearcher] = state.guestAPI.isResearcher
+
+    const logoutUser = async () =>{
+        await axios.get('user/logout')
+        localStorage.clear()
+        setunLogged(false)
+        setIsResearcher(false)
+    }
+
+
+    const researcherRouter = () =>{
+        return(
+            <>
+                <li><Link to="/create_research">Add Research</Link></li>
+                <li><Link to="/researcher">All Researches</Link></li>
+                
+            </>
+        )
+    }
+
+    const attendeeRouter = () =>{
+        return(
+            <>
+                <li><Link to="/workshopsN">Workshops</Link></li>
+                <li><Link to="/researcher">All Researches</Link></li>
+                <li><Link to="/" onClick={logoutUser}>Logout</Link></li>
+                
+            </>
+        )
+    }
   return (
     <div className="main">
         <Navbar className="navbar navbar-expand-lg navbar-light bg-light">
@@ -65,6 +99,16 @@ function Header() {
                             Contact
                         </a>
                     </li>
+
+                    {isResearcher && researcherRouter()}
+                    {
+                        unLogged ? attendeeRouter() :    <li class="nav-item">
+                        <a class="nav-link" href="/">
+                            Login|Register
+                        </a>
+                    </li>
+                    }
+
                     <li class="nav-item">
                         <a class="nav-link" href="/">
                             Login|Register
