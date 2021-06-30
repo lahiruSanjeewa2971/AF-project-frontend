@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { useParams, useHistory } from 'react-router-dom';
 import axios from "axios";
+import emailjs from 'emailjs-com'
 
 function AcceptWorkshops(){
     const params = useParams();
@@ -17,6 +18,16 @@ function AcceptWorkshops(){
             console.log(err)
         })
     }, [])
+
+    function Notification(e){
+        e.preventDefualt();
+
+        emailjs.sendForm('service_erpcm66', 'template_f90dssf',
+         e.target, 
+         'user_d495GYFrmkdQBsemWVvP0').then(res=>{
+             console.log(res);
+         }).catch(err=> console.log(err));
+    }
 
     function setWorkshopData(){
         const updateItem={
