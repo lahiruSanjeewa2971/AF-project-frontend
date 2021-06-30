@@ -11,12 +11,14 @@ function DashBoard(){
                 <Grid item xs={3} className="secondgrid">
                     <Link to="#"><button className="btn btn-outline-primary">Research papers</button><br/><br/><br/></Link>
                     <Link to="/viewallworkshopseditor"><button className="btn btn-outline-primary">Workshops</button><br/><br/><br/></Link>
-                    <button className="btn btn-outline-primary">Research-activities</button><br/><br/><br/>
+                    {/*<button className="btn btn-outline-primary">Researchers</button><br/><br/><br/>*/}
+                    <Link to="/editorViewResearchers"><button className="btn btn-outline-primary">Researchers</button><br/><br/><br/></Link>
+                    
                     
                 </Grid>
                 <Grid item xs={8} className="thirdgrid">
                     <Link to="/newConference"><button className="btn btn-outline-primary">New Conference</button></Link><br/>
-                    <Link to="/viewmoredetails">Click for more Details</Link>
+                    
                     {/*<Link to="/editor"><button className="btn btn-outline-primary">Create workshop</button><br/><br/><br/></Link>*/}
                     {/*<ViewConference/>*/}
                     {<EditorAllConferenceView/>}

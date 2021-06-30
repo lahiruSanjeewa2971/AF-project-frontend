@@ -1,12 +1,12 @@
 import React, { useState, useEffect} from 'react';
 import axios from 'axios';
 
-function EditorViewAllWorkshops(){
+function EditorViewAllResearchers(){
     const [postdata, setPostdata] = useState([]);
 
     //take data from db
     useEffect(() => {
-        axios.get("http://localhost:8070/workshops/displayAllWorkshops").then((res) => {
+        axios.get("http://localhost:8070/manageResearchers/displayAll").then((res) => {
             setPostdata(res.data);
         }).catch((err) => {
             alert(err);
@@ -17,13 +17,12 @@ function EditorViewAllWorkshops(){
     const ListAllWorkshops = (props)=>{
         return(
             <tr>
+                <td>{props.record.name}</td>
                 <td>{props.record.title}</td>
-                <td>{props.record.time}</td>
-                <td>{props.record.date}</td>
                 <td>{props.record.description}</td>
-                <td>{props.record.category}</td>
-                <td>{props.record.status}</td>
-                
+                <td>{props.record.contact_name}</td>
+                <td>{props.record.contact_no}</td>
+                <td>{props.record.contact_mail}</td>
             </tr>
         )
     }
@@ -37,16 +36,16 @@ function EditorViewAllWorkshops(){
     return (
         <div>
             <div>
-            <br/><h2 style={{fontFamily:'Gabriola'}}>New Workshop Details.</h2><br/>
+            <br/><h2 style={{fontFamily:'Gabriola'}}>Researchers.</h2><br/>
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
                         <tr>
+                            <th>Name</th>
                             <th>Title</th>
-                            <th>Time</th>
-                            <th>Date</th>
                             <th>Description</th>
-                            <th>Category</th>
-                            <th>Status</th>
+                            <th>Contact Name</th>
+                            <th>Contact No</th>
+                            <th>Contact Mail</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -57,4 +56,4 @@ function EditorViewAllWorkshops(){
         </div>
     )
 }
-export default EditorViewAllWorkshops;
+export default EditorViewAllResearchers;

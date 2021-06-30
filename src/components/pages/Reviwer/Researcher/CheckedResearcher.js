@@ -5,13 +5,13 @@ import { Link } from 'react-router-dom';
 import Box from "@material-ui/core/Box";
  
 
-function AllResearcherView(){
+function CheckedResearcher(){
     const [postData, setPostData] = useState([]);
     //const [postAllData, setPostAllData] = useState([]);
 
     //take sorted data from db
     useEffect(() => {
-        axios.get("http://localhost:8070/researchers/displayallR").then((res) => {
+        axios.get("http://localhost:8070/researchers/checkedR").then((res) => {
             console.log(res.data);
             setPostData(res.data);
         })
@@ -23,7 +23,7 @@ function AllResearcherView(){
    
 
     //set sorted data by single instant
-    const Allresearchers = (props)=>{
+    const Checkedresearchers = (props)=>{
         return(
             <tr>
                 <td>{props.record.name}</td>
@@ -43,7 +43,7 @@ function AllResearcherView(){
     //maps sorted data
     const List = postData.map((post)=>{
         return (
-            <Allresearchers record={post}/>
+            <Checkedresearchers record={post}/>
         );
     });
     
@@ -59,7 +59,7 @@ function AllResearcherView(){
                 >
                 <h1>Review research papers & Workshops</h1>
             </Box>
-            <br/><h2 style={{fontFamily:'cursive'}}>All Researcher Details</h2><br/>
+            <br/><h2 style={{fontFamily:'cursive'}}>Accepted Researcher Details</h2><br/>
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
                         <tr>
@@ -86,4 +86,4 @@ function AllResearcherView(){
         </div>
     )
 }
-export default AllResearcherView;
+export default CheckedResearcher;

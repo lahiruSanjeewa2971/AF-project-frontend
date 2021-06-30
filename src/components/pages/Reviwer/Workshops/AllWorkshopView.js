@@ -3,15 +3,26 @@ import axios from 'axios';
 import { Grid,   } from "@material-ui/core";
 import { Link } from 'react-router-dom';
 import Box from "@material-ui/core/Box";
+import { useHistory } from 'react-router-dom'
  
 
 function AllWorkshopView(){
     const [postData, setPostData] = useState([]);
-    //const [postAllData, setPostAllData] = useState([]);
+    const history = useHistory();
+
+    function DeleteItems(workshop_id){
+        
+        axios.post("http://localhost:8070/workshops/deletew", {workshop_id : workshop_id}).then(res => {
+            alert(res.data)
+            history.go(0)
+        }).catch(err => {
+            console.log(err)
+        })
+    }
 
     //take sorted data from db
     useEffect(() => {
-        axios.get("http://localhost:8070/workshops/displayallW").then((res) => {
+        axios.get("http://localhost:8070/workshopsReviewer/displayallW").then((res) => {
             console.log(res.data);
             setPostData(res.data);
         })
