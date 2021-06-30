@@ -11,7 +11,7 @@ function AllResearcherView(){
 
     //take sorted data from db
     useEffect(() => {
-        axios.get("http://localhost:8070/workshops/displayallW").then((res) => {
+        axios.get("http://localhost:8070/researchers/displayallR").then((res) => {
             console.log(res.data);
             setPostData(res.data);
         })
@@ -26,11 +26,13 @@ function AllResearcherView(){
     const Allresearchers = (props)=>{
         return(
             <tr>
+                <td>{props.record.name}</td>
+                <td>{props.record.researche_id}</td>
                 <td>{props.record.title}</td>
-                <td>{props.record.time}</td>
-                <td>{props.record.date}</td>
                 <td>{props.record.description}</td>
-                <td>{props.record.category}</td>
+                <td>{props.record.contact_name}</td>
+                <td>{props.record.contact_no}</td>
+                <td>{props.record.contact_mail}</td>
                 <td>{props.record.status}</td>
                  
             </tr>
@@ -57,15 +59,17 @@ function AllResearcherView(){
                 >
                 <h1>Review research papers & Workshops</h1>
             </Box>
-            <br/><h2 style={{fontFamily:'cursive'}}>All Workshop Details</h2><br/>
+            <br/><h2 style={{fontFamily:'cursive'}}>All Researcher Details</h2><br/>
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
                         <tr>
+                            <th>Name</th>
+                            <th>ID</th>
                             <th>Title</th>
-                            <th>Time</th>
-                            <th>Date</th>
                             <th>Description</th>
-                            <th>Category</th>
+                            <th>Contact Name</th>
+                            <th>Contact Number</th>
+                            <th>Contact Mail</th>
                             <th>Status</th>
                              
                         </tr>

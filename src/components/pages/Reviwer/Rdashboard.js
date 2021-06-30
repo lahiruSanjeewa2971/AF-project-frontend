@@ -2,6 +2,7 @@ import React from "react";
 import { Grid,borderColor  } from "@material-ui/core";
 import { Link } from 'react-router-dom';
 import Box from "@material-ui/core/Box";
+import WorkshopPost from './Workshops/WorkshopPost'
 
 
 function dashBoard(){
@@ -23,7 +24,7 @@ function dashBoard(){
                     
                 </Grid>
                 <Grid>
-
+                    {<WorkshopPost/>}
                 </Grid>
                                  
             </Grid>
