@@ -57,7 +57,7 @@ function CheckedWorkshops(){
                 >
                 <h1>Review research papers & Workshops</h1>
             </Box>
-            <br/><h2 style={{fontFamily:'cursive'}}>All Workshop Details</h2><br/>
+            <br/><h2 style={{fontFamily:'cursive'}}>Accepted Workshop Details</h2><br/>
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
                         <tr>

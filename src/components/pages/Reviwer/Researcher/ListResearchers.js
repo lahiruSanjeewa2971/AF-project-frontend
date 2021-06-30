@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Grid,   } from "@material-ui/core";
 import { Link } from 'react-router-dom';
 import Box from "@material-ui/core/Box";
+import ResearcherPosts from './ResearcherPosts'
 
 function ListResearchers(){
     const [postData, setPostData] = useState([]);
@@ -27,10 +28,19 @@ function ListResearchers(){
             <tr>
                  
                 <td>{props.record.name}</td>
+                <td>{props.record.researche_id}</td>
+                <td>{props.record.title}</td>
+                <td>{props.record.description}</td>
+                <td>{props.record.contact_name}</td>
+                <td>{props.record.contact_no}</td>
+                <td>{props.record.contact_mail}</td>
                 <td>{props.record.status}</td>
                 <td>
-                    <a href={`/edititem/${props.record.workshopid}`}>Click</a>
+                    <a href={`/acceptresearchers/${props.record.workshopid}`}>Accept</a>
                 </td>
+                {/* <td>
+                    <a href={`/deleteresearchers/${props.record.workshopid}`}>Delete</a>
+                </td> */}
             </tr>
         )
     }
@@ -60,8 +70,13 @@ function ListResearchers(){
                     <thead>
                         <tr>
                             <th>Name</th>
-                            <th>Status</th>
-                            {/* <th>Email</th> */}
+                            <th>ID</th>
+                            <th>Title</th>
+                            <th>Description</th>
+                            <th>Contact Name</th>
+                            <th>Contact Number</th>
+                            <th>Contact Mail</th>
+                            <th>status</th>
                              
                         </tr>
                     </thead>
@@ -70,11 +85,13 @@ function ListResearchers(){
                     </tbody>
                 </table>
             </div>
-
+            <Grid>
+                    {<ResearcherPosts/>}
+                </Grid>
             <Grid container alignItems="center" justify="center">             
                 <Grid item xs={2} className="secondgrid" >
-                        <Link to="#"><button className="btn btn-outline-primary">All Research Ppapers</button><br/><br/><br/></Link>
-                        <Link to="#"><button className="btn btn-outline-primary">Research papers</button></Link><br/>
+                        <Link to="/allresearcherview"><button className="btn btn-outline-primary">All Research Ppapers</button><br/><br/><br/></Link>
+                        <Link to="/checkedresearcher"><button className="btn btn-outline-primary">Checked Research papers</button></Link><br/>
                      
                     
                 </Grid>
