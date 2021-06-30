@@ -56,6 +56,7 @@ import ViewSingleConference from './components/pages/Editor/Conference/ViewSingl
 import EditorViewAllWorkshops from './components/pages/Editor/Workshop/EditorViewAllWorkshops';
 import ViewMoreDetails from './components/pages/Editor/HomePageDisplay/ViewMoreDetails';
 import AdminViewAllUsers from './components/pages/admin/Users/AdminViewAllUsers';
+import EditorViewAllResearchers from './components/pages/Editor/Researches/EditorViewAllResearchers';
 
 
 function App() {
@@ -95,10 +96,10 @@ function App() {
         <Route path="/newConference" exact component={NewConference}/>
         <Route path="/displayUsers" exact component={DisplayUsers}/>
         <Route path="/viewallworkshopseditor" exact component={EditorViewAllWorkshops} />        
-        <Route path="/viewmoredetails" exact component={ViewMoreDetails} />
+        <Route path="/viewmoredetails/:conferenceid" exact component={ViewMoreDetails} />
         <Route path="/viewworkshops" exact component={AdminViewWorkshopsAll} />
         <Route path="/adminviewAllUsers" exact component={AdminViewAllUsers} />
-
+        <Route path="/editorViewResearchers" exact component={EditorViewAllResearchers} />
 
 
         <Route path="/reviewer" exact component={Reviewer}/>
