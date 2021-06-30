@@ -18,7 +18,7 @@ function AcceptWorkshops(){
         })
     }, [])
 
-    function setConferenceData(){
+    function setWorkshopData(){
         const updateItem={
             status: status,
             workshop_id: params.workshop_id
@@ -36,8 +36,8 @@ function AcceptWorkshops(){
 
     return (
         <div>
-            <h3>Edit Conference Details</h3><br/>
-            <form onSubmit={setConferenceData}>
+            <h3>Edit workshop Detail</h3><br/>
+            <form onSubmit={setWorkshopData}>
                 <div className="container">
                     <input type="text" className="form-control" value={status} 
                     onChange={(e) => {
