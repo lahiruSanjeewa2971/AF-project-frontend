@@ -23,9 +23,7 @@ function EditorViewAllWorkshops(){
                 <td>{props.record.description}</td>
                 <td>{props.record.category}</td>
                 <td>{props.record.status}</td>
-                <td>
-                    <a href={`/editSingleWorkshop/${props.record.workshop_id}`}>Click</a>
-                </td>
+                
             </tr>
         )
     }
@@ -49,7 +47,6 @@ function EditorViewAllWorkshops(){
                             <th>Description</th>
                             <th>Category</th>
                             <th>Status</th>
-                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>

@@ -33,7 +33,7 @@ function ListWorkshops(){
                 <td>{props.record.category}</td>
                 <td>{props.record.status}</td>
                 <td>
-                    <a href={`/acceptworkshops/${props.record.workshopid}`}>Accept</a>
+                    <a href={`/acceptworkshops/${props.record.workshop_id}`}>Accept</a>
                 </td>
                 {/* <td>
                     <a href={`/deleteworkshops/${props.record.workshopid}`}>Delete</a>
