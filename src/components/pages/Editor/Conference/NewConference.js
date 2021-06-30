@@ -7,6 +7,7 @@ import {MuiPickersUtilsProvider, KeyboardDatePicker, KeyboardTimePicker} from '@
 import uniqid from 'uniqid';
 import axios from 'axios';
 
+
 function NewConference(){
     //const [date, setDate] = useState(new Date());
 
@@ -15,6 +16,9 @@ function NewConference(){
     const [location, setLocation] = useState('');
     const [description, setDescription] = useState('');
     const [note, setNote] = useState('');
+    const [time, setTime] = useState('');
+    const [category, setCategory] = useState('');
+    const [researcher, setResearcher] = useState('');
 
     const handleDateChange = (date) => {
         setSelectedDate(date);
@@ -26,6 +30,9 @@ function NewConference(){
             title,
             selectedDate,
             location,
+            time,
+            researcher,
+            category,
             description,
             note,
             conferenceid: uniqid(),
@@ -78,6 +85,24 @@ function NewConference(){
                         <input type="text" className="form-control" placeholder="Location"
                             onChange={(e)=>{
                                 setLocation(e.target.value);
+                            }}/>
+                    </div><br/>
+                    <div className="container">
+                        <input type="text" className="form-control" placeholder="Enter Time"
+                            onChange={(e)=>{
+                                setTime(e.target.value);
+                            }}/>
+                    </div><br/>
+                    <div className="container">
+                        <input type="text" className="form-control" placeholder="Enter Researcher who join with the conference"
+                            onChange={(e)=>{
+                                setResearcher(e.target.value);
+                            }}/>
+                    </div><br/>
+                    <div className="container">
+                        <input type="text" className="form-control" placeholder="Enter category belongs to relevent workshop"
+                            onChange={(e)=>{
+                                setCategory(e.target.value);
                             }}/>
                     </div><br/>
                     <div className="container">

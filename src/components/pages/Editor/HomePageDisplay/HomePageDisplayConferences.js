@@ -34,7 +34,8 @@ function HomePageDisplayConferences(){
                             {props.record.note}
                         </Typography>
                         {/*<button className="btn btn-outline-primary">Click for more Details</button>*/}
-                        <Link to="/viewmoredetails">Click for more Details</Link>
+                        {/*<Link to="/viewmoredetails">Click for more Details</Link>*/}
+                        <Link to={`/viewmoredetails/${props.record.conferenceid}`} style={{marginRight:'8px'}}>Click for more Details</Link>
                         
                     </CardContent>
                 </Card>

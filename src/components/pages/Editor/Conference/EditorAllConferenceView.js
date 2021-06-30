@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
+import Deleteicon from '@material-ui/icons/Delete';
+import { useHistory } from 'react-router-dom';
 
 function EditorAllConferenceView(){
     const [postdata, setPostdata] = useState([]);
+    const history = useHistory();
+
+    function deleteItem(conferenceid){
+        axios.post('http://localhost:8070/conferences/delete', {conferenceid: conferenceid}).then(res => {
+            alert(res.data)
+            history.go(0)
+        }).catch(err => {
+            console.log(err)
+        })
+    }
 
     useEffect(() => {
         axios.get("http://localhost:8070/conferences/displayconferences").then((res) => {
@@ -32,11 +45,20 @@ function EditorAllConferenceView(){
                             <h2>{props.record.location}</h2>
                             <h2>{props.record.description}</h2>
                             <h2>{props.record.note}</h2>
+                            <h2>{props.record.time}</h2>
+                            <h2>{props.record.category}</h2>
+                            <h2>{props.record.researcher}</h2>
                             <h2>Status : {props.record.status}</h2>  
                             {/*<a className="btn btn-danger" href={`/editConference/${props.record.conferenceid}`}>Admin acceptance</a>
                             <Link to={`/editConf/${props.record.conferenceid}`}><button className="btn btn-outline-primary">New Conference</button></Link><br/>
                             <Link to={`/editConf/${props.record.conferenceid}`}><li className="btn btn-info">Edit</li></Link>*/}
-                            <Link to={`/editConference/${props.record.conferenceid}`}><li className="btn btn-info">Edit</li></Link>
+                            <Link to={`/editConference/${props.record.conferenceid}`} style={{marginRight:'8px'}}><li className="btn btn-info">Edit Conference details</li></Link>
+                            {/*<Link to={`/editConference/${props.record.conferenceid}`}><li className="btn btn-danger">Delete Conference details</li></Link>*/}
+                            <Button startIcon={<Deleteicon/>} variant="contained" color="secondary" 
+                                onClick={() => {
+                                    deleteItem(props.record.conferenceid);
+                                }}
+                            className="btn btn-danger">Delete</Button>
                     </div>
                 </div>
             </div>
