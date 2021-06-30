@@ -84,7 +84,7 @@ export default function NavBar(){
                         </a></li>
 
 
-                        <li className= "nav-item"><a class="nav-link" href="/workshopsN">
+                        <li className= "nav-item"><a class="nav-link" href="/createWorkshopsN">
                             Add Workshop
                         </a></li>
 

@@ -42,6 +42,7 @@ import WorkshopDetails from './components/pages/Workshop/WorkshopDetails';
 import WorkshopsN from './components/WorkshopsN/WorkshopsN';
 import Researcher from './components/Researcher/Researcher';
 import CreateResearcher from './components/Item/createResearcher/CreateResearcher';
+import CreateWorkshopsN from './components/Item/createWorkshopN/CreateWorkshopsN'
 import Cart from './cart/Cart'
 import Test from './Test'
 import AdminViewWorkshopsAll from './components/pages/admin/Workshops/AdminViewWorkshopsAll';
@@ -93,6 +94,7 @@ function App() {
         <Route path="/workshopsN" exact component={WorkshopsN}/>
         <Route path="/researcher" exact component={Researcher}/>
         <Route path="/createResearcher" exact component={CreateResearcher}/>
+        <Route path="/createWorkshopsN" exact component={CreateWorkshopsN}/>
         <Route path="/cart" exact component={Cart}/>
         <Route path="/detail/:id" exact component={DetailWorkshop} />
        
