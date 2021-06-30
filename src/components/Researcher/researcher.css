@@ -1,42 +1,9 @@
 .researcher{
-    max-width: 700px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    margin: 30px auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    justify-content: center;
+    margin: 30px 0;
 }
 
-.researcher form{
-    display: block;
-    font-weight: 700;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 10px;
-}
-
-.researcher input, button{
-    height: 35px;
-    border: none;
-    border-bottom: 1px solid #346;
-}
-
-.researcher input{
-    width: 210px;
-}
-
-.researcher button{
-    width: 70px;
-    background: cadetblue;
-    color: chocolate;
-    margin-left: 15px;
-}
-
-.researcher .row{
-    min-width: 200px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-}
+@import url("../Item/researcherItem.css");

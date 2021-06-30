@@ -1,0 +1,44 @@
+.researche_card{
+    max-width: 350px;
+    overflow: hidden;
+    padding: 20px;
+    box-shadow: 0 0 15 #ddd;
+}
+
+.researche_card img{
+    width: 200%;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+}
+
+.researche_box h2{
+    width: 100%;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-transform: capitalize;
+    cursor: pointer;
+    color: red;
+}
+
+.row_btn{
+    width: 10%;
+    margin-top: 10%;
+    display: flex;
+    justify-content: space-between;
+}
+.row_btn a{
+    width: 350%;
+    text-align: center;
+    text-transform: uppercase;
+    color:black;
+    font-weight: 600;
+    letter-spacing: 2px;
+    padding: 6px;
+}
+
+#btn_view{
+    background: rgb(215, 211, 219);
+    margin-right: 5px;
+}

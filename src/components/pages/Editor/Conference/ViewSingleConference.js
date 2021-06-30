@@ -10,6 +10,9 @@ function ViewSingleConference(){
     const [location, setLocation] = useState("");
     const [description, setDescription] = useState("");
     const [note, setNote] = useState("");
+    const [time, setTime] = useState("");
+    const [category, setCategory] = useState("");
+    const [researcher, setResearcher] = useState('');
 
     const history = useHistory();
 
@@ -21,6 +24,9 @@ function ViewSingleConference(){
             setLocation(postdata.location);
             setDescription(postdata.description);
             setNote(postdata.note);
+            setTime(postdata.time);
+            setCategory(postdata.category);
+            setResearcher(postdata.researcher);
         }).catch((err) => {
             console.log(err)
         })
@@ -33,6 +39,9 @@ function ViewSingleConference(){
             location: location,
             description: description,
             note: note,
+            time: time,
+            category: category,
+            researcher: researcher,
             conferenceid: params.conferenceid
         }
         console.log(updateItem)
@@ -69,6 +78,12 @@ function ViewSingleConference(){
                     }}/><br/>
                 </div>
                 <div className="container">
+                    <input type="text" className="form-control" value={researcher} 
+                    onChange={(e) => {
+                        setResearcher(e.target.value);
+                    }}/><br/>
+                </div>
+                <div className="container">
                     <input type="text" className="form-control" value={description} 
                     onChange={(e) => {
                         setDescription(e.target.value);
@@ -80,6 +95,18 @@ function ViewSingleConference(){
                         setNote(e.target.value);
                     }}/>
                 </div><br/>
+                <div className="container">
+                    <input type="text" className="form-control" value={time} 
+                    onChange={(e) => {
+                        setTime(e.target.value);
+                    }}/><br/>
+                </div>
+                <div className="container">
+                    <input type="text" className="form-control" value={category} 
+                    onChange={(e) => {
+                        setCategory(e.target.value);
+                    }}/><br/>
+                </div>
                 <button className="btn btn-outline-primary">Submit Conference Details</button>
             </form>
         </div>

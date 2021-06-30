@@ -25,9 +25,9 @@ function AdminViewMessages(){
                         backgroundColor:'red',
                         paddingBottom:'10px',
                         marginLeft: '17%'}}>
-                            <h4>{props.record.name}</h4>
-                            <h4>{props.record.email}</h4>
-                            <h4>{props.record.message}</h4>
+                            <h5>{props.record.name}</h5>
+                            <h5>{props.record.email}</h5>
+                            <h5>{props.record.message}</h5>
                             <Link to={`/editConference/${props.record.conferenceid}`}><li className="btn btn-info">Edit</li></Link>
                     </div>
                 </div>
