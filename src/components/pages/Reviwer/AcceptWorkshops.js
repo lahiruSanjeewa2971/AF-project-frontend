@@ -28,7 +28,7 @@ function AcceptWorkshops(){
             alert(res.data)
             history.push("/")
         }).catch(err => {
-            console.log('Conference data not updated...', err)
+            console.log('Workshop data not updated...', err)
             alert(err)
         })
     }

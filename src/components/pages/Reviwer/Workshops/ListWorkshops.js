@@ -35,9 +35,9 @@ function ListWorkshops(){
                 <td>
                     <a href={`/acceptworkshops/${props.record.workshop_id}`}>Accept</a>
                 </td>
-                {/* <td>
-                    <a href={`/deleteworkshops/${props.record.workshopid}`}>Delete</a>
-                </td> */}
+                <td>
+                    <a href={`/deleteworshops/${props.record.workshop_id}`}>Delete</a>
+                </td>
             </tr>
         )
     }

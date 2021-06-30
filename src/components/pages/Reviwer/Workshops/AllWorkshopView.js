@@ -22,7 +22,7 @@ function AllWorkshopView(){
 
     //take sorted data from db
     useEffect(() => {
-        axios.get("http://localhost:8070/workshops/displayallW").then((res) => {
+        axios.get("http://localhost:8070/workshopsReviewer/displayallW").then((res) => {
             console.log(res.data);
             setPostData(res.data);
         })
