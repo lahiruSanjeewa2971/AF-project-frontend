@@ -1,6 +1,5 @@
 import './App.css';
 import React from 'react';
-import './App.css';
 import Header from "./components/Header";
 //import Footer from "./components/Footer";
 import Home from "./components/Home";
@@ -42,6 +41,7 @@ import WorkshopDetails from './components/pages/Workshop/WorkshopDetails';
 import WorkshopsN from './components/WorkshopsN/WorkshopsN';
 import Researcher from './components/Researcher/Researcher';
 import CreateResearcher from './components/Item/createResearcher/CreateResearcher';
+import CreateWorkshopsN from './components/Item/createWorkshopN/CreateWorkshopsN'
 import Cart from './cart/Cart'
 import Test from './Test'
 import AdminViewWorkshopsAll from './components/pages/admin/Workshops/AdminViewWorkshopsAll';
@@ -59,6 +59,7 @@ import ViewSingleConference from './components/pages/Editor/Conference/ViewSingl
 import EditorViewAllWorkshops from './components/pages/Editor/Workshop/EditorViewAllWorkshops';
 import ViewMoreDetails from './components/pages/Editor/HomePageDisplay/ViewMoreDetails';
 import AdminViewAllUsers from './components/pages/admin/Users/AdminViewAllUsers';
+import AcceptConference from './components/pages/admin/AcceptConference';
 import EditorViewAllResearchers from './components/pages/Editor/Researches/EditorViewAllResearchers';
 
 
@@ -93,6 +94,7 @@ function App() {
         <Route path="/workshopsN" exact component={WorkshopsN}/>
         <Route path="/researcher" exact component={Researcher}/>
         <Route path="/createResearcher" exact component={CreateResearcher}/>
+        <Route path="/createWorkshopsN" exact component={CreateWorkshopsN}/>
         <Route path="/cart" exact component={Cart}/>
         <Route path="/detail/:id" exact component={DetailWorkshop} />
        
@@ -104,6 +106,8 @@ function App() {
         <Route path="/viewmoredetails/:conferenceid" exact component={ViewMoreDetails} />
         <Route path="/viewworkshops" exact component={AdminViewWorkshopsAll} />
         <Route path="/adminviewAllUsers" exact component={AdminViewAllUsers} />
+        <Route path= "/acceptconference/:conferenceid" exact component={AcceptConference}/>
+       
         <Route path="/editorViewResearchers" exact component={EditorViewAllResearchers} />
 
 

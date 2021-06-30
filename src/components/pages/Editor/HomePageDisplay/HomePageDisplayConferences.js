@@ -12,7 +12,7 @@ function HomePageDisplayConferences(){
     const [postdata, setPostdata] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8070/conferences/displayconferences").then((res) => {
+        axios.get("http://localhost:8070/conferences/displaySortedconferences").then((res) => {
             setPostdata(res.data);
             console.log(postdata)
         }).catch((err) => {

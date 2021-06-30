@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useHistory } from 'react-router-dom';
 import axios from 'axios';
 
 function SingleConference(){
     const params = useParams();
+    const history = useHistory();
 
     const [title, setTitle] = useState("");
     const [date, setdate] = useState("");
@@ -25,11 +26,24 @@ function SingleConference(){
         }).catch((err) => {
             console.log(err);
         })
-    }, [])
+    }, []);
+
+    function setConferencedata(){
+        const updateItem={
+            status: status,
+            conferenceid: params.conferenceid
+        }
+        axios.post("http://localhost:8070/adminConference/updateConferenceStatus", updateItem).then(res => {
+            alert(res.data)
+            history.pushState("/")
+        }).catch(err => {
+            console.log('Conference status not updated ')
+        })
+    }
 
     return (
         <div>
-        <form>
+        <form onSubmit={setConferencedata}>
             <div className="container">
                 <input type="text" className="form-control" value={title} 
                 onChange={(e) => {
@@ -66,7 +80,9 @@ function SingleConference(){
                     setStatus(e.target.value);
                 }}/>
             </div>
-
+            <div className="conatiner">
+                <button className="btn btn-outline-primary">Accept or Reject</button>
+            </div>
         </form>
         </div>
     )

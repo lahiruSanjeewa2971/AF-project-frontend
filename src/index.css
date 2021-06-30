@@ -21,3 +21,5 @@ code {
 @import url("./components/Researcher/researcher.css");
 
 @import url("./components/Item/createResearcher/createResearcher.css");
+
+@import url("./components/Item/createWorkshopN/createWorkshopsN.css");

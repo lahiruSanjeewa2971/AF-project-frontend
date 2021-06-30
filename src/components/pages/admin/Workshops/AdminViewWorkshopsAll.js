@@ -1,8 +1,10 @@
 import React, { useState, useEffect} from 'react';
+import {useHistory} from 'react-router-dom'
 import axios from 'axios';
 
 function AdminViewWorkshopsAll(){
     const [postdata, setPostdata] = useState([]);
+    const history = useHistory();
 
     //take data from db
     useEffect(() => {
@@ -13,6 +15,16 @@ function AdminViewWorkshopsAll(){
         })
     }, []);
 
+    
+    function deleteWorkshop(workshop_id){
+        axios.post("http://localhost:8070/adminDashboardViewWorkshops/deleteworkshop", {workshop_id: workshop_id}).then(res=>{
+            alert(res.data)
+            history.go(0)
+        }).catch(err=>{
+            console.log(err)
+        })
+
+    }
     //set sorted data by single instant
     const ListAllWorkshops = (props)=>{
         return(
@@ -24,7 +36,7 @@ function AdminViewWorkshopsAll(){
                 <td>{props.record.category}</td>
                 <td>{props.record.status}</td>
                 <td>
-                    <a href={`/editSingleWorkshop/${props.record.workshop_id}`}>Click</a>
+                <button className='btn btn-danger' onClick={()=>{deleteWorkshop(props.record.workshop_id)}}>Delete</button>
                 </td>
             </tr>
         )

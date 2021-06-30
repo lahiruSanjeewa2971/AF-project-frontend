@@ -1,9 +1,17 @@
 import React, { useState, useEffect} from 'react';
+import {useHistory} from 'react-router-dom'
 import axios from 'axios';
+import IconButton from '@material-ui/core/IconButton';
+import DeleteIcon from '@material-ui/icons/Delete';
+import TableBody from '@material-ui/core/TableBody';
+import TableCell from '@material-ui/core/TableCell';
+import TableHead from '@material-ui/core/TableHead';
+import TableRow from '@material-ui/core/TableRow';
+
 
 function AdminViewAllUsers(){
     const [postdata, setPostdata] = useState([]);
-
+    const history = useHistory()
     //take data from db
     useEffect(() => {
         axios.get("http://localhost:8070/tempuser/displayusers").then((res) => {
@@ -14,43 +22,56 @@ function AdminViewAllUsers(){
     }, []);
 
     //set sorted data by single instant
-    const ListAllWorkshops = (props)=>{
+    const ListAllUsers = (props)=>{
         return(
-            <tr>
-                <td>{props.record.role}</td>
-                <td>{props.record.email}</td>
-                <td>{props.record.mobile}</td>
-                <td>{props.record.name}</td>
-                <td>
-                    <a href={`/editSingleWorkshop/${props.record.workshop_id}`}>Click</a>
-                </td>
-            </tr>
+            <TableRow>
+                <TableCell>{props.record.role}</TableCell>
+                <TableCell>{props.record.email}</TableCell>
+                <TableCell>{props.record.mobile}</TableCell>
+                <TableCell>{props.record.name}</TableCell>
+                <TableCell>{props.record._id}</TableCell>
+                <TableCell>
+                    <IconButton aria-label="delete" onClick={()=>{deleteuser(props.record._id)}}>
+
+                            <DeleteIcon color="secondary"/>
+                    </IconButton>
+                </TableCell>
+            </TableRow>
         )
     }
-    
-    const workshopList = postdata.map((post) => {
+    function deleteuser(userid){
+        axios.post('http://localhost:8070/tempuser/deleteuser', {userid}).then(res=>{
+            console.log(userid);
+            alert(res.data)
+            history.go(0)
+        }).catch(err=>{
+            console.log(err)
+        })
+
+    }
+    const userList = postdata.map((post) => {
         return (
-            <ListAllWorkshops record = {post}/>
+            <ListAllUsers record = {post}/>
         )
     })
 
     return (
         <div>
-            <div>
+            <div className="container">
             <br/><h2 style={{fontFamily:'Gabriola'}}>AllRegistered Users.</h2><br/>
                 <table className="table table-striped" style={{ marginTop: 20 }}>
-                    <thead>
-                        <tr>
-                            <th>Role</th>
-                            <th>Email</th>
-                            <th>Mobile</th>
-                            <th>Name</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {workshopList}
-                    </tbody>
+                    <TableHead>
+                        <TableRow>
+                            <TableCell>Role</TableCell>
+                            <TableCell>Email</TableCell>
+                            <TableCell>Mobile</TableCell>
+                            <TableCell>Name</TableCell>
+                            <TableCell>Action</TableCell>
+                        </TableRow>
+                    </TableHead>
+                    <TableBody>
+                        {userList}
+                    </TableBody>
                 </table>
             </div>
         </div>
