@@ -41,8 +41,7 @@ import ViewSingleConference from './components/pages/Editor/Conference/ViewSingl
 import EditorViewAllWorkshops from './components/pages/Editor/Workshop/EditorViewAllWorkshops';
 import ViewMoreDetails from './components/pages/Editor/HomePageDisplay/ViewMoreDetails';
 import AdminViewAllUsers from './components/pages/admin/Users/AdminViewAllUsers';
-
-
+import AcceptConference from './components/pages/admin/AcceptConference';
 function App() {
   return (
     <DataProvider>
@@ -82,6 +81,8 @@ function App() {
         <Route path="/viewmoredetails" exact component={ViewMoreDetails} />
         <Route path="/viewworkshops" exact component={AdminViewWorkshopsAll} />
         <Route path="/adminviewAllUsers" exact component={AdminViewAllUsers} />
+        <Route path= "/acceptconference/:conferenceid" exact component={AcceptConference}/>
+       
 
       </Router>
     </div>

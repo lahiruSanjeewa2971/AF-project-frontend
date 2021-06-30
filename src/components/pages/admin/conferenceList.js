@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
-import ConferenceView from './ConferenceView';
- function ConferenceList(){
+import {Link, useHistory, useParams} from 'react-router-dom';
+
+
+function ConferenceList(){
     const [confData, setConfData] = useState([]);
-        
+    const [status, setStatus] = useState([]);
+    const history = useHistory();
     useEffect(() => {
         axios.get("http://localhost:8070/conferences/displayconferences").then((res) => {
             setConfData(res.data);
@@ -13,20 +15,17 @@ import ConferenceView from './ConferenceView';
             alert(err)
         })
     }, []);
-
+   
+    
     const Listconferences = (props)=>{
         return(
             <tr>
                 <td>{props.record.title}</td>
                 <td>{props.record.description}</td>
-                {/*<td onClick={e=>navigateConferenceViewPage(e, props.record._id)}  className='btn btn-default btn-sm btn-warning'>View</td>
-                <td><a href="" className='btn btn-default btn-sm btn-success'>Accept </a></td>
-        <td><a href="" className='btn btn-default btn-sm btn-danger'>Reject </a></td>*/}
                 <td>
-                    {/**onClick={e=>navigateConferenceViewPage(e, props.record._id)} */}
-                    {/*<a className='btn btn-default btn-sm btn-warning' onClick={e=>navigateConferenceViewPage(e, props.record._id)}>View</a>*/}
-                    <Link to={`/singleConference/${props.record.conferenceid}`}><li className='btn btn-default btn-sm btn-warning'>Edit conf</li></Link>
-                    <a href="" className='btn btn-default btn-sm btn-success'>Accept </a>
+                    <Link to={`/singleConference/${props.record.conferenceid}`}><li className='btn btn-default btn-sm btn-warning'>View Conference</li></Link>
+                    <Link to={`/acceptConference/${props.record.conferenceid}`}><li className='btn btn-default btn-sm btn-warning'>Accept Conference</li></Link>
+                    
                     <a href="" className='btn btn-default btn-sm btn-danger'>Reject </a>
                 </td>
             </tr>

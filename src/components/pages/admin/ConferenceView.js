@@ -1,6 +1,6 @@
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
-import { useParams, useHistory } from 'react-router'
+import { useParams} from 'react-router'
 
 
 function ConferenceView(){
@@ -11,8 +11,6 @@ function ConferenceView(){
     const[location, setlocation] = useState('');
     const[description,setdescription]=useState('');
     const[note,setnote]=useState('');
-
-    const history = useHistory()
 
     useEffect(()=>{
         axios.post("http://localhost:8070/conferences/getconference", {conferenceid: params.conferenceid}).then(res=>{
@@ -50,7 +48,7 @@ function ConferenceView(){
                     value={note} onChange={(e)=>{setnote(e.target.value)}}
                     />
 
-                    <button className='btn btn-success float-left'>Accept or Reject</button>
+                    <button className='btn btn-success float-left' href = "/conference">Accept or Reject</button>
  
                 </div>
             </div>
