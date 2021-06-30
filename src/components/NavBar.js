@@ -41,7 +41,7 @@ export default function NavBar(){
     const researcherRouter = () =>{
         return(
             <>
-                 <li className= "nav-item"><a class="nav-link" href="/create_research">
+                 <li className= "nav-item"><a class="nav-link" href="/CreateResearcher">
                  Add Researches
                  </a></li>
 

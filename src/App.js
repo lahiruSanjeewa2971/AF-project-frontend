@@ -37,6 +37,7 @@ import SingleConference from './components/pages/admin/SingleConference';
 import WorkshopDetails from './components/pages/Workshop/WorkshopDetails';
 import WorkshopsN from './components/WorkshopsN/WorkshopsN';
 import Researcher from './components/Researcher/Researcher';
+import CreateResearcher from './components/Item/createResearcher/CreateResearcher';
 import Cart from './cart/Cart'
 import Test from './Test'
 import AdminViewWorkshopsAll from './components/pages/admin/Workshops/AdminViewWorkshopsAll';
@@ -45,6 +46,7 @@ import AdminViewWorkshopsAll from './components/pages/admin/Workshops/AdminViewW
 
 import {DataProvider} from '../src/components/State'
 import DetailWorkshop from './components/pages/detailWorkshop/DetailWorkshop'
+
 //import EditConference from './components/pages/Editor/Conference/EditConference';
 import NewConference from './components/pages/Editor/Conference/NewConference';
 
@@ -85,8 +87,10 @@ function App() {
         <Route path="/worshopDetails" exact component={WorkshopDetails} />
         <Route path="/workshopsN" exact component={WorkshopsN}/>
         <Route path="/researcher" exact component={Researcher}/>
+        <Route path="/createResearcher" exact component={CreateResearcher}/>
         <Route path="/cart" exact component={Cart}/>
         <Route path="/detail/:id" exact component={DetailWorkshop} />
+       
         <Route path="/test" exact component={Test}/>
         <Route path="/editConference/:conferenceid" exact component={ViewSingleConference} />
         <Route path="/newConference" exact component={NewConference}/>

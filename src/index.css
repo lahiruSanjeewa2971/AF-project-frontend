@@ -19,3 +19,5 @@ code {
 @import url("./components/pages/detailWorkshop/detailWorkshop.css");
 
 @import url("./components/Researcher/researcher.css");
+
+@import url("./components/Item/createResearcher/createResearcher.css");
