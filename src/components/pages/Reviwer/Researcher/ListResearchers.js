@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import { Grid,   } from "@material-ui/core";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import Box from "@material-ui/core/Box";
-import ResearcherPosts from './ResearcherPosts'
+import ResearcherPosts from  './ResearcherPosts'
 
-function ListResearchers(){
+function ListResearches(){
     const [postData, setPostData] = useState([]);
     //const [postAllData, setPostAllData] = useState([]);
+    const history = useHistory();
 
     //take sorted data from db
     useEffect(() => {
@@ -19,6 +20,16 @@ function ListResearchers(){
             alert(err)
         })
     }, []);
+
+    function DeleteItems(researche_id){
+        
+        axios.delete("http://localhost:8070/researchers/deleteR", {researche_id : researche_id}).then(res => {
+            alert(res.data)
+            history.go(0)
+        }).catch(err => {
+            console.log(err)
+        })
+    }
 
    
 
@@ -41,13 +52,16 @@ function ListResearchers(){
                 {/* <td>
                     <a href={`/deleteresearchers/${props.record.workshopid}`}>Delete</a>
                 </td> */}
+                <td>
+                    <button type="button" onClick={() => DeleteItems(props.record.researche_id)}>Delete</button>
+                </td>
             </tr>
         )
     }
    
 
     //maps sorted data
-    const Listresearch = postData.map((post)=>{
+    const ListRe = postData.map((post)=>{
         return (
             <Sresearch record={post}/>
         );
@@ -78,17 +92,18 @@ function ListResearchers(){
                             <th>Contact Mail</th>
                             <th>status</th>
                             <th>Accept</th>
-                             
+                            <th>Delete</th>                             
                         </tr>
                     </thead>
                     <tbody>
-                        {Listresearch}            
+                        {ListRe}            
                     </tbody>
                 </table>
             </div>
+            
             <Grid>
-                    {<ResearcherPosts/>}
-                </Grid>
+               <ResearcherPosts/> 
+            </Grid>
             <Grid container alignItems="center" justify="center">             
                 <Grid item xs={2} className="secondgrid" >
                         <Link to="/allresearcherview"><button className="btn btn-outline-primary">All Research Ppapers</button><br/><br/><br/></Link>
@@ -102,4 +117,4 @@ function ListResearchers(){
         </div>
     )
 }
-export default ListResearchers;
+export default ListResearches;

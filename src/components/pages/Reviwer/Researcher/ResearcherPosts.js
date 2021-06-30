@@ -5,16 +5,13 @@ import { Link } from 'react-router-dom';
 import Box from "@material-ui/core/Box";
  
 
-
-
-
 function ResearcherPosts(){
     const [postData, setPostData] = useState([]);
     //const [postAllData, setPostAllData] = useState([]);
 
     //take sorted data from db
     useEffect(() => {
-        axios.get("http://localhost:8070/researchers/checkedR").then((res) => {
+        axios.get("http://localhost:8070/researchers/").then((res) => {
             console.log(res.data);
             setPostData(res.data);
         })
@@ -38,6 +35,8 @@ function ResearcherPosts(){
                     <p>Category :{props.record.contact_no}</p>
                     <p>Category :{props.record.contact_mail}</p>                    
                     <p>Status: {props.record.status}</p>
+                    <button type="button">Accept</button>
+                    <button type="button">Delete</button>
                 </div>
                  
             </div>

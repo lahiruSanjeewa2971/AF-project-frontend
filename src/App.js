@@ -22,7 +22,7 @@ import Register from "./components/pages/Register";
 import WorkshopPost from './components/pages/Reviwer/Workshops/WorkshopPost'
 import Reviewer from './components/pages/Reviwer/Rdashboard';
 import Listworkshops from "./components/pages/Reviwer/Workshops/ListWorkshops";
-import ListResearchers from "./components/pages/Reviwer/Researcher/ListResearchers";
+import ListResearches from "./components/pages/Reviwer/Researcher/ListResearchers";
 import AcceptWorkshops from "./components/pages/Reviwer/AcceptWorkshops";
 import AcceptResearchers from "./components/pages/Reviwer/AcceptResearchers" ;
 import AllWorkshopView from  "./components/pages/Reviwer/Workshops/AllWorkshopView";
@@ -115,7 +115,7 @@ function App() {
         <Route path="/listworkshops" exact component={Listworkshops}/>
         <Route path="/workshoppost" exact component={WorkshopPost}/>
         {/* <Route path="/listconferences" exact component={ListConference}/> */}
-        <Route path="/listresearchers" exact component={ListResearchers}/>        
+        <Route path="/listresearchers" exact component={ListResearches}/>        
         <Route path="/acceptworkshops/:workshop_id" exact component={AcceptWorkshops}/>
         <Route path="/acceptresearchers/:researche_id" exact component={AcceptResearchers}/>
         <Route path="/deleteworshops/" exact component={DeleteWorkshops}/>

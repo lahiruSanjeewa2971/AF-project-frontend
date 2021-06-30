@@ -11,7 +11,7 @@ function DeleteResearcher(){
 
     function DeleteItems(researche_id){
         
-        axios.post("http://localhost:8070/researchers/deleteR", {researche_id : researche_id}).then(res => {
+        axios.delete("http://localhost:8070/researchers/deleteR", {researche_id : researche_id}).then(res => {
             alert(res.data)
             history.go(0)
         }).catch(err => {

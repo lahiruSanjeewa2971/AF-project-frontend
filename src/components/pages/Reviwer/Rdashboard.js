@@ -5,6 +5,7 @@ import Box from "@material-ui/core/Box";
 import WorkshopPost from './Workshops/WorkshopPost'
 
 
+
 function dashBoard(){
     return(
         <div>
@@ -23,9 +24,7 @@ function dashBoard(){
                      
                     
                 </Grid>
-                {/* <Grid>
-                    {<WorkshopPost/>}
-                </Grid> */}
+                 
                                  
             </Grid>
              
