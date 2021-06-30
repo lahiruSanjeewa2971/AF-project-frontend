@@ -23,7 +23,8 @@ function ListResearches(){
 
     function DeleteItems(researche_id){
         
-        axios.delete("http://localhost:8070/researchers/deleteR", {researche_id : researche_id}).then(res => {
+        axios.post("http://localhost:8070/researchers/deleteR", {researche_id : researche_id}).then(res => {
+            console.log(researche_id)
             alert(res.data)
             history.go(0)
         }).catch(err => {
