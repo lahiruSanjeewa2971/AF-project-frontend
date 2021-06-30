@@ -36,7 +36,7 @@ function ListResearchers(){
                 <td>{props.record.contact_mail}</td>
                 <td>{props.record.status}</td>
                 <td>
-                    <a href={`/acceptresearchers/${props.record.workshopid}`}>Accept</a>
+                    <a href={`/acceptresearchers/${props.record.researche_id}`}>Accept</a>
                 </td>
                 {/* <td>
                     <a href={`/deleteresearchers/${props.record.workshopid}`}>Delete</a>
@@ -77,6 +77,7 @@ function ListResearchers(){
                             <th>Contact Number</th>
                             <th>Contact Mail</th>
                             <th>status</th>
+                            <th>Accept</th>
                              
                         </tr>
                     </thead>

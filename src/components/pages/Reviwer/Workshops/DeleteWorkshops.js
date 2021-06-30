@@ -18,7 +18,18 @@ function DeleteWorkshops(){
             console.log(err)
         })
     }
-     
+    
+    const Deleteworkshop = (props)=>{
+        return(
+            <div>
+                <Button variant="contained"
+                onClick={() => {
+                    DeleteItems(props.record.workshop_id);
+                }}
+                className="btn btn-danger">Delete</Button>
+            </div>
+        )
+    }
     return (
         <div align="center">
             
