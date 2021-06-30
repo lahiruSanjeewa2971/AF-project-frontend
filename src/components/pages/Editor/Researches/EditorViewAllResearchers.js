@@ -35,7 +35,7 @@ function EditorViewAllResearchers(){
 
     return (
         <div>
-            <div>
+            <div style={{marginRight:'40px', marginLeft:'40px'}}>
             <br/><h2 style={{fontFamily:'Gabriola'}}>Researchers.</h2><br/>
                 <table className="table table-striped" style={{ marginTop: 20 }}>
                     <thead>
