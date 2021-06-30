@@ -11,7 +11,7 @@ function CheckedWorkshops(){
 
     //take sorted data from db
     useEffect(() => {
-        axios.get("http://localhost:8070/workshops/checkedW").then((res) => {
+        axios.get("http://localhost:8070/workshopsReviewer/checkedW").then((res) => {
             console.log(res.data);
             setPostData(res.data);
         })
